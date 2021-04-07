@@ -37,6 +37,9 @@ source /usr/share/fzf/completion.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 # source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# fix git gpg autosigning
+export GPG_TTY=$(tty)
+
 sd () {
     sdcv -n --utf8-output --color "$@" 2>&1 | \
         fold --width=$(tput cols) | \
