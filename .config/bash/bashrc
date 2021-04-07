@@ -1,0 +1,33 @@
+set -o vi
+
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+HISTSIZE=1000000
+HISTFILESIZE=2000000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+# append to the history file, don't overwrite it
+shopt -s histappend
+shopt -s autocd
+shopt -s expand_aliases
+shopt -s cdspell
+shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+PS1='\w \$ '
+
+complete -cf sudo
+complete -cf man
+
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
+def() {
+    sdcv -n --utf8-output --color "$@" 2>&1 | \
+        fold --width=$(tput cols) | \
+        less -FRX
+    }

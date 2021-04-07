@@ -1,0 +1,18 @@
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip --color=auto'
+alias ls='ls -hF --color=auto'
+alias lr='ls -R'                    # recursive ls
+alias ll='ls -l'
+alias la='ll -A'
+alias grep='grep --color=auto'
+alias disas='objdump -drwC -Mintel'
+alias j='vim $HOME/media/docs/journal.md'
+alias d="date +'%a %Y-%m-%d %H:%M:%S'"
+alias rs='rsync -vrP --delete-after'
+alias webcam='mpv --no-cache --no-osc --profile=low-latency --untimed --title=webcam /dev/video0'
+alias ua='udevadm info --attribute-walk'
+alias flags='pkg-config --cflags --libs'
+alias arduino-cli='arduino-cli --config-file $XDG_CONFIG_HOME/arduino15/arduino-cli.yaml'
