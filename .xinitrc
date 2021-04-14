@@ -29,7 +29,7 @@ wmname LG3D
 # uim-xim &
 # export XMODIFIERS=@im=uim
 # xmobar &
-picom &
+picom --xrender-sync-fence &
 exec dwm
 # exec awesome
 # exec xmonad
