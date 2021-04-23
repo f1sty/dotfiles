@@ -2,6 +2,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
+alias less='less -R'
 alias ip='ip --color=auto'
 alias ls='ls -hF --color=auto'
 alias lr='ls -R'                    # recursive ls
