@@ -1,3 +1,4 @@
 #!/bin/sh
 
-amixer get Master | tail -1 | cut -d' ' -f7 | sed -e 's/[][]//g'
+# amixer get Master | tail -1 | cut -d' ' -f7 | sed -e 's/[][]//g'
+pamixer --get-volume-human
