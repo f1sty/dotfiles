@@ -136,7 +136,7 @@ colorscheme gruvbox
 nmap <leader>l :bn<CR>
 nmap <leader>h :bp<CR>
 nmap <leader>q :bp <bar> bd #<CR>
-nmap <leader>a :Ag 
+nmap <leader>r :Rg 
 nmap <leader>f :Files<cr>
 nmap <leader>u :UnicodeSearch! 
 nmap // :BLines<cr>
