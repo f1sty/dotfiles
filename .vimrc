@@ -15,7 +15,8 @@ call plug#begin()
     Plug 'mhinz/vim-mix-format'
     Plug 'slashmili/alchemist.vim'
     Plug 'rust-lang/rust.vim'
-    Plug 'scrooloose/syntastic'
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'scrooloose/syntastic'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'pangloss/vim-javascript'
@@ -84,7 +85,7 @@ set incsearch                           " increment search
 set ignorecase                          " case-insensitive search
 set smartcase                           " uppercase causes case-sensitive search
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set foldlevelstart=99     " no folds closed on open
 set foldmethod=indent     " collapse code using markers
@@ -100,17 +101,17 @@ set scrolloff=9
 let mapleader="\\"
 let python_highlight_all=1
 let g:solarized_termcolors=256
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_elixir_checker = 1
-let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_asm_checkers = ["nasm"]
-let g:syntastic_error_symbol = '⨯'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '↯'
-let g:syntastic_style_warning_symbol = '¡'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_elixir_checker = 1
+" let g:syntastic_python_checkers = ["flake8"]
+" let g:syntastic_asm_checkers = ["nasm"]
+" let g:syntastic_error_symbol = '⨯'
+" let g:syntastic_style_error_symbol = '⁉️'
+" let g:syntastic_warning_symbol = '↯'
+" let g:syntastic_style_warning_symbol = '¡'
 " let g:syntastic_nasm_nasm_lint_args = '-felf64'
 " let g:ycm_autoclose_preview_window_after_completion=1
 let g:airline_theme = 'gruvbox'
@@ -139,8 +140,9 @@ nmap <leader>q :bp <bar> bd #<CR>
 nmap <leader>r :Rg 
 nmap <leader>f :Files<cr>
 nmap <leader>u :UnicodeSearch! 
+nmap <leader>t :terminal<cr>
 nmap // :BLines<cr>
-map <M-k> :SyntasticToggleMode<CR>
+" map <leader>k :SyntasticToggleMode<CR>
 inoremap <M-space> <Esc>
 " imap <expr> <tab> pumvisible() ? '<esc>a<Plug>snipMateNextOrTrigger' : '<Plug>snipMateNextOrTrigger'
 " smap <tab> <Plug>snipMateNextOrTrigger
@@ -162,6 +164,5 @@ nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
 autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
-
 iabbrev ssig --<cr>Yurii Skrynnykov<cr>truef1s7@gmail.com
 hi Normal guibg=NONE ctermbg=NONE
