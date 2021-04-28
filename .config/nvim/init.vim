@@ -5,18 +5,13 @@ set nocompatible              " required
 call plug#begin()
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
-    " Plug 'tpope/vim-fugitive'
     Plug 'SirVer/ultisnips'
-    " Plug 'MarcWeber/vim-addon-mw-utils'
-    " Plug 'tomtom/tlib_vim'
-    " Plug 'garbas/vim-snipmate'
     Plug 'honza/vim-snippets'
     Plug 'elixir-editors/vim-elixir'
     Plug 'mhinz/vim-mix-format'
     Plug 'slashmili/alchemist.vim'
     Plug 'rust-lang/rust.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'scrooloose/syntastic'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'pangloss/vim-javascript'
@@ -28,14 +23,10 @@ call plug#begin()
     Plug 'sjl/badwolf'
     Plug 'altercation/vim-colors-solarized'
     Plug 'morhetz/gruvbox'
-    " Plug 'Shougo/deoplete.nvim'
-    " Plug 'roxma/nvim-yarp'
-    " Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'stevearc/vim-arduino'
     Plug 'fatih/vim-go'
     Plug 'chrisbra/unicode.vim'
     Plug 'ap/vim-css-color'
-    " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 call plug#end()
 
 " doesn't needed, already run by plug
@@ -101,35 +92,14 @@ set scrolloff=9
 let mapleader="\\"
 let python_highlight_all=1
 let g:solarized_termcolors=256
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_enable_elixir_checker = 1
-" let g:syntastic_python_checkers = ["flake8"]
-" let g:syntastic_asm_checkers = ["nasm"]
-" let g:syntastic_error_symbol = '⨯'
-" let g:syntastic_style_error_symbol = '⁉️'
-" let g:syntastic_warning_symbol = '↯'
-" let g:syntastic_style_warning_symbol = '¡'
-" let g:syntastic_nasm_nasm_lint_args = '-felf64'
-" let g:ycm_autoclose_preview_window_after_completion=1
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:base16colorspace = 256
 let g:UltiSnipsListSnippets = "<leader>s"
-" let g:UltiSnipsExpandTrigger = "<leader>s"
-" let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-" let g:UltiSnipsEditSplit = "vertical"
-" let g:deoplete#enable_at_startup = 1
-" let g:user_emmet_leader_key = '<C-Z>'
 let g:arduino_dir = "/usr/share/arduino"
 let g:arduino_home_dir = $HOME . "/.arduino15"
 let g:arduino_board = 'arduino:avr:uno'
 let g:rustfmt_autosave = 1
-" let $BASH_ENV = "~/.bashrc"
 let g:snipMate = { 'snippet_version' : 1 }
 
 colorscheme gruvbox
@@ -140,13 +110,9 @@ nmap <leader>q :bp <bar> bd #<CR>
 nmap <leader>r :Rg 
 nmap <leader>f :Files<cr>
 nmap <leader>u :UnicodeSearch! 
-nmap <leader>t :terminal<cr>
+nmap T :split <bar> terminal<cr>
 nmap // :BLines<cr>
-" map <leader>k :SyntasticToggleMode<CR>
 inoremap <M-space> <Esc>
-" imap <expr> <tab> pumvisible() ? '<esc>a<Plug>snipMateNextOrTrigger' : '<Plug>snipMateNextOrTrigger'
-" smap <tab> <Plug>snipMateNextOrTrigger
-" nnoremap <leader>tw gqip
 nnoremap <space> za
 vnoremap <space> za
 noremap <up> <nop>
@@ -160,6 +126,19 @@ inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -182,6 +161,7 @@ function! s:show_documentation()
   endif
 endfunction
 
+autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
