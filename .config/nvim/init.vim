@@ -88,6 +88,21 @@ set foldmethod=indent
 setlocal spelllang=en_us
 set complete+=kspell
 set scrolloff=9
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 let mapleader="\\"
 let python_highlight_all=1
@@ -139,16 +154,9 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
+inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -167,42 +175,15 @@ autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 iabbrev ssig --<cr>Yurii Skrynnykov<cr>truef1s7@gmail.com
 hi Normal guibg=NONE ctermbg=NONE
 
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
 
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
