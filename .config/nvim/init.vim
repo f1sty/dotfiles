@@ -1,108 +1,75 @@
-set nocompatible              " required
-
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-commentary'
     Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'ap/vim-css-color'
+    Plug 'chrisbra/unicode.vim'
     Plug 'elixir-editors/vim-elixir'
-    Plug 'mhinz/vim-mix-format'
-    Plug 'slashmili/alchemist.vim'
-    Plug 'rust-lang/rust.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'pangloss/vim-javascript'
-    Plug 'nvie/vim-flake8'
-    Plug 'tmhedberg/SimpylFold'
-    Plug 'majutsushi/tagbar'
+    Plug 'fatih/vim-go'
+    Plug 'honza/vim-snippets'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'sjl/badwolf'
-    Plug 'altercation/vim-colors-solarized'
+    Plug 'majutsushi/tagbar'
+    Plug 'mhinz/vim-mix-format'
     Plug 'morhetz/gruvbox'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvie/vim-flake8'
+    Plug 'pangloss/vim-javascript'
+    Plug 'rust-lang/rust.vim'
+    Plug 'sjl/badwolf'
+    Plug 'slashmili/alchemist.vim'
     Plug 'stevearc/vim-arduino'
-    Plug 'fatih/vim-go'
-    Plug 'chrisbra/unicode.vim'
-    Plug 'ap/vim-css-color'
+    Plug 'tmhedberg/SimpylFold'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-" doesn't needed, already run by plug
-" filetype plugin indent on
-" syntax enable
-set shell=/bin/zsh
-set title
-set ruler
-set number
-set scrolloff=3
-set ttyfast                             " don't lag…
-set cursorline                          " track position
-set wrap                              " don't wrap lines
-set splitbelow                          " place new files below the current
-set showmatch                           " matching brackets & the like
 set clipboard+=unnamed                  " yank and copy to X clipboard
-set encoding=utf-8                      " UTF-8 encoding for all new files
-set backspace=2                         " full backspacing capabilities (indent,eol,start)
-set wildmenu                            " enhanced tab-completion shows all matching cmds in a popup menu
-set wildmode=list:full          " full completion options
-set shiftwidth=4 tabstop=4 expandtab
-set softtabstop=4
-set noshowmode
-set showcmd
-set autoread
-set linebreak
-set nowrap
-set timeout
-set nottimeout
-set timeoutlen=300
-" set listchars=tab:»»,trail:·,nbsp:~,eol:↵,extends:❯,precedes:❮
-" set list                                " show special characters
-set fillchars=vert:┃
-set lazyredraw
-set formatoptions+=j
-set formatoptions+=n
-set nojoinspaces
-set colorcolumn=98
-set textwidth=98
-set autoindent
-set fileformat=unix
-set wrap mouse=a
-set hidden                              " allow switch between buffers w/o saving changes
-set t_Co=256
-set hlsearch                            " highlight all search results
-set incsearch                           " increment search
-set ignorecase                          " case-insensitive search
-set smartcase                           " uppercase causes case-sensitive search
-set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set foldlevelstart=99     " no folds closed on open
-set foldmethod=indent     " collapse code using markers
-set background=dark
-set foldenable
-set foldnestmax=5
-set foldlevelstart=3
-set foldmethod=indent
-setlocal spelllang=en_us
-set complete+=kspell
-set scrolloff=9
-set nobackup
-set nowritebackup
 set cmdheight=1
-set updatetime=300
-set shortmess+=c
+set colorcolumn=98
+set complete+=kspell
+set cursorline                          " track position
+set fileformat=unix
+set foldenable
+set foldlevelstart=3
+set foldlevelstart=99     " no folds closed on open
+set foldmethod=indent
+set foldmethod=indent     " collapse code using markers
+set foldnestmax=5
+set hidden                              " allow switch between buffers w/o saving changes
+set ignorecase                          " case-insensitive search
+set lazyredraw
+set linebreak
+set nobackup
+set nojoinspaces
+set noshowmode
+set nottimeout
+set nowrap
+set nowritebackup
+set number
+set scrolloff=9
+set shell=/bin/zsh
+set shiftwidth=4 tabstop=4 expandtab
+set showmatch                           " matching brackets & the like
+set smartcase                           " uppercase causes case-sensitive search
+set softtabstop=4
+set splitbelow                          " place new files below the current
+set statusline+=%#warningmsg#
+set statusline+=%*
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set t_Co=256
+set termguicolors
+set textwidth=98
+set timeout
+set timeoutlen=300
+set title
+set updatetime=300
+set wrap mouse=a
+set signcolumn=yes
+setlocal spelllang=en_us
 
 let mapleader="\\"
 let python_highlight_all=1
@@ -159,16 +126,6 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
 autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
@@ -182,8 +139,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 iabbrev ssig --<cr>Yurii Skrynnykov<cr>truef1s7@gmail.com
 hi Normal guibg=NONE ctermbg=NONE
-
-
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -200,11 +155,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -223,7 +174,6 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -288,20 +238,6 @@ endif
 " Requires 'textDocument/selectionRange' support of language server.
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.

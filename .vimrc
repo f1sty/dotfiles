@@ -3,100 +3,99 @@ set nocompatible              " required
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-commentary'
-    " Plug 'tpope/vim-fugitive'
-    Plug 'SirVer/ultisnips'
     " Plug 'MarcWeber/vim-addon-mw-utils'
-    " Plug 'tomtom/tlib_vim'
-    " Plug 'garbas/vim-snipmate'
-    Plug 'honza/vim-snippets'
-    Plug 'elixir-editors/vim-elixir'
-    Plug 'mhinz/vim-mix-format'
-    Plug 'slashmili/alchemist.vim'
-    Plug 'rust-lang/rust.vim'
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'scrooloose/syntastic'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'pangloss/vim-javascript'
-    Plug 'nvie/vim-flake8'
-    Plug 'tmhedberg/SimpylFold'
-    Plug 'majutsushi/tagbar'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'sjl/badwolf'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'morhetz/gruvbox'
     " Plug 'Shougo/deoplete.nvim'
+    " Plug 'garbas/vim-snipmate'
+    " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'roxma/nvim-yarp'
     " Plug 'roxma/vim-hug-neovim-rpc'
-    Plug 'stevearc/vim-arduino'
-    Plug 'fatih/vim-go'
-    Plug 'chrisbra/unicode.vim'
+    " Plug 'scrooloose/syntastic'
+    " Plug 'tomtom/tlib_vim'
+    " Plug 'tpope/vim-fugitive'
+    Plug 'SirVer/ultisnips'
+    Plug 'altercation/vim-colors-solarized'
     Plug 'ap/vim-css-color'
-    " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+    Plug 'chrisbra/unicode.vim'
+    Plug 'elixir-editors/vim-elixir'
+    Plug 'fatih/vim-go'
+    Plug 'honza/vim-snippets'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'majutsushi/tagbar'
+    Plug 'mhinz/vim-mix-format'
+    Plug 'morhetz/gruvbox'
+    Plug 'nvie/vim-flake8'
+    Plug 'pangloss/vim-javascript'
+    Plug 'rust-lang/rust.vim'
+    Plug 'sjl/badwolf'
+    Plug 'slashmili/alchemist.vim'
+    Plug 'stevearc/vim-arduino'
+    Plug 'tmhedberg/SimpylFold'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " doesn't needed, already run by plug
 " filetype plugin indent on
 " syntax enable
-set shell=/bin/zsh
-set title
-set ruler
-set number
-set scrolloff=3
-set ttyfast                             " don't lag…
-set cursorline                          " track position
-set wrap                              " don't wrap lines
-set splitbelow                          " place new files below the current
-set showmatch                           " matching brackets & the like
-set clipboard+=unnamed                  " yank and copy to X clipboard
-set encoding=utf-8                      " UTF-8 encoding for all new files
-set backspace=2                         " full backspacing capabilities (indent,eol,start)
-set wildmenu                            " enhanced tab-completion shows all matching cmds in a popup menu
-set wildmode=list:full          " full completion options
-set shiftwidth=4 tabstop=4 expandtab
-set softtabstop=4
-set noshowmode
-set showcmd
-set autoread
-set linebreak
-set nowrap
-set timeout
-set nottimeout
-set timeoutlen=300
-" set listchars=tab:»»,trail:·,nbsp:~,eol:↵,extends:❯,precedes:❮
 " set list                                " show special characters
+" set listchars=tab:»»,trail:·,nbsp:~,eol:↵,extends:❯,precedes:❮
+" set statusline+=%{SyntasticStatuslineFlag()}
+set autoindent
+set autoread
+set background=dark
+set backspace=2                         " full backspacing capabilities (indent,eol,start)
+set clipboard+=unnamed                  " yank and copy to X clipboard
+set colorcolumn=98
+set complete+=kspell
+set cursorline                          " track position
+set encoding=utf-8                      " UTF-8 encoding for all new files
+set fileformat=unix
 set fillchars=vert:┃
-set lazyredraw
+set foldenable
+set foldlevelstart=3
+set foldlevelstart=99     " no folds closed on open
+set foldmethod=indent
+set foldmethod=indent     " collapse code using markers
+set foldnestmax=5
 set formatoptions+=j
 set formatoptions+=n
-set nojoinspaces
-set colorcolumn=98
-set textwidth=98
-set autoindent
-set fileformat=unix
-set wrap mouse=a
 set hidden                              " allow switch between buffers w/o saving changes
-set t_Co=256
 set hlsearch                            " highlight all search results
-set incsearch                           " increment search
 set ignorecase                          " case-insensitive search
-set smartcase                           " uppercase causes case-sensitive search
-set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set foldlevelstart=99     " no folds closed on open
-set foldmethod=indent     " collapse code using markers
-set background=dark
-set foldenable
-set foldnestmax=5
-set foldlevelstart=3
-set foldmethod=indent
-setlocal spelllang=en_us
-set complete+=kspell
+set incsearch                           " increment search
+set lazyredraw
+set linebreak
+set nojoinspaces
+set noshowmode
+set nottimeout
+set nowrap
+set number
+set ruler
 set scrolloff=9
+set shell=/bin/zsh
+set shiftwidth=4 tabstop=4 expandtab
+set showcmd
+set showmatch                           " matching brackets & the like
+set smartcase                           " uppercase causes case-sensitive search
+set softtabstop=4
+set splitbelow                          " place new files below the current
+set statusline+=%#warningmsg#
+set statusline+=%*
+set t_Co=256
+set textwidth=98
+set timeout
+set timeoutlen=300
+set title
+set ttyfast                             " don't lag…
+set wildmenu                            " enhanced tab-completion shows all matching cmds in a popup menu
+set wildmode=list:full          " full completion options
+set wrap                              " don't wrap lines
+set wrap mouse=a
+setlocal spelllang=en_us
 
 let mapleader="\\"
 let python_highlight_all=1
