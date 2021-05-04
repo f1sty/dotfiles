@@ -90,7 +90,7 @@ set complete+=kspell
 set scrolloff=9
 set nobackup
 set nowritebackup
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
