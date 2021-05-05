@@ -2,10 +2,11 @@
 
 unsetopt PROMPT_SP
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 
+export ERL_TOP="$HOME/src/otp"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -39,5 +40,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export TERM=screen-256color
 export PATH="$HOME/scripts:$PATH"
 
+source "$HOME/.cargo/env"
 if [ -f '/home/f1st/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/f1st/bin/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/home/f1st/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/f1st/bin/google-cloud-sdk/completion.zsh.inc'; fi
