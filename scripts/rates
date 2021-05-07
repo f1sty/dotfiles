@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+usd=$(curl -L "https://openexchangerates.org/api/latest.json?app_id=${OPENXCHG_API_KEY}&symbols=UAH" 2&>/dev/null | rg -i uah | cut -d: -f2)
+eur=$(curl -L "http://api.exchangeratesapi.io/v1/latest?access_key=${EXCHG_API_KEY}" 2&>/dev/null | cut -d, -f152 | cut -d: -f2)
+
+echo $eur $usd

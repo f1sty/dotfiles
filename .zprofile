@@ -41,5 +41,6 @@ export TERM=screen-256color
 export PATH="$HOME/scripts:$PATH"
 
 source "$HOME/.cargo/env"
+source "$HOME/.secrets"
 if [ -f '/home/f1st/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/f1st/bin/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/home/f1st/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/f1st/bin/google-cloud-sdk/completion.zsh.inc'; fi
