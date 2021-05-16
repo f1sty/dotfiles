@@ -2,7 +2,8 @@
 
 unsetopt PROMPT_SP
 
-export EDITOR="nvim"
+export EDITOR="vim"
+export VISUAL="gvim"
 export TERMINAL="st"
 export BROWSER="firefox"
 

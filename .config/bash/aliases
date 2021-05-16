@@ -5,7 +5,7 @@ alias diff='diff --color=auto'
 alias less='less -R'
 alias ip='ip --color=auto'
 # alias ls='ls -hF --color=auto --group-directories-first'
-alias vim='nvim'
+# alias vim='nvim'
 alias ls='exa --icons --group-directories-first'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
