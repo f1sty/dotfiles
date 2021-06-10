@@ -49,3 +49,8 @@ sd () {
 shot () {
     scrot -s -e 'mv $f ~/media/images/screenshots/'
 }
+
+
+yta() {
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
+}
