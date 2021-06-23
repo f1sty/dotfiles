@@ -23,7 +23,7 @@ call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'majutsushi/tagbar'
-    Plug 'mhinz/vim-mix-format'
+    " Plug 'mhinz/vim-mix-format'
     Plug 'morhetz/gruvbox'
     Plug 'nvie/vim-flake8'
     Plug 'pangloss/vim-javascript'
@@ -41,9 +41,9 @@ call plug#end()
 " doesn't needed, already run by plug
 " filetype plugin indent on
 " syntax enable
-" set list                                " show special characters
-" set listchars=tab:»»,trail:·,nbsp:~,eol:↵,extends:❯,precedes:❮
 " set statusline+=%{SyntasticStatuslineFlag()}
+set list                                " show special characters
+set listchars=tab:»»,trail:·,nbsp:~,eol:↵,extends:❯,precedes:❮
 set autoindent
 set autoread
 set background=dark
@@ -121,6 +121,10 @@ endif
 let mapleader="\\"
 let python_highlight_all=1
 let g:solarized_termcolors=256
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
@@ -137,6 +141,7 @@ let g:solarized_termcolors=256
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_powerline_fonts = 1
 " let g:base16colorspace = 256
 let g:UltiSnipsListSnippets = "<leader>s"
 " let g:UltiSnipsExpandTrigger = "<leader>s"
@@ -154,9 +159,12 @@ let g:snipMate = { 'snippet_version' : 1 }
 
 colorscheme gruvbox
 
-nmap <leader>l :bn<CR>
-nmap <leader>h :bp<CR>
-nmap <leader>q :bp <bar> bd #<CR>
+nmap <leader>l :bn<cr>
+nmap <leader>h :bp<cr>
+nmap <leader>q :bp <bar> bd #<cr>
+" map <C-\> <C-]>:tab ball<cr>gT
+" nmap <leader>n :tabnew<cr>
+" nmap <leader>q :tabclose<cr>
 nmap <leader>r :Rg 
 nmap <leader>f :Files<cr>
 nmap <leader>u :UnicodeSearch! 
@@ -180,10 +188,13 @@ inoremap <right> <nop>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <buffer> <leader>m :silent make <bar> redraw!<CR>
+" nnoremap ; :
+" nnoremap : ;
 
 autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufWritePost *.exs,*.ex silent :!mix format %
 iabbrev ssig --<cr>Yurii Skrynnykov<cr>truef1s7@gmail.com
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -244,8 +255,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!

@@ -40,7 +40,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export TERM=screen-256color
-export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/scripts:$HOME/.mix/escripts:$PATH"
 export LIBVA_DRIVER_NAME="vdpau"
 export VDPAU_DRIVER="nvidia"
 

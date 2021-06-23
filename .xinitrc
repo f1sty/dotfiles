@@ -32,6 +32,8 @@ wmname LG3D
 # xmobar &
 # picom --xrender-sync-fence &
 # picom -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil
+picom &
 exec dwm
+# exec spectrwm
 # exec awesome
 # exec xmonad
