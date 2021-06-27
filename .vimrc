@@ -195,7 +195,9 @@ autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{MyStatusLine()}'
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufWritePost *.exs,*.ex silent :!mix format %
-iabbrev ssig --<cr>Yurii Skrynnykov<cr>truef1s7@gmail.com
+
+iabbrev ssig --<cr>Yurii Skrynnykov<cr><cr>email: truef1s7@gmail.com<cr>github: https://github.com/f1sty
+
 hi Normal guibg=NONE ctermbg=NONE
 
 " Use tab for trigger completion with characters ahead and navigate.
