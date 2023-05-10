@@ -1,0 +1,11 @@
+function sd ()
+{
+    sdcv -n --utf8-output --color "$@" 2>&1 | \
+        fold --width=$(tput cols) | \
+        less -FRX
+}
+
+function remind ()
+{
+    echo "mpv $HOME/downloads/bell.wav" | at now + "$1" |& tail -n1
+}

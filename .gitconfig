@@ -1,0 +1,47 @@
+[user]
+    name = Yurii Skrynnykov
+    email = truef1s7@gmail.com
+    signingkey = 9055CEB79D106FC68CC3BA155145F09CE60FDB47
+[core]
+    editor = nvim
+[commit]
+    gpgsign = on
+[alias]
+    st = status
+    a = add
+    aa = add --all
+    amend = commit --amend
+    b = branch
+    bb = branch -a
+    bd = branch -d
+    cherry-pit = "!f() { git rebase -p --onto \"$1\"^ \"$1\"; }; f"
+    cm = commit -m
+    co = checkout
+    d = diff
+    ec = config --global -e
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    l = log --relative-date --graph --abbrev-commit -10
+    ll = log --relative-date --graph --abbrev-commit
+    p = push
+    remotes = remote -v
+    s = status -s
+    sd = d --cached
+    sh = show
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+[pull]
+    rebase = false
+[init]
+    defaultBranch = main
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[url "git@github.com:"]
+	insteadOf = git://github.com/
