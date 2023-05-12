@@ -22,8 +22,8 @@ elixir.setup {
 
     -- alternatively, point to an existing elixir-ls installation (optional)
     -- not currently supported by elixirls, but can be a table if you wish to pass other args `{"path/to/elixirls", "--foo"}`
-    -- cmd = "/usr/lib/elixir-ls/language_server.sh",
-    cmd = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/elixir-ls/language_server.sh",
+    cmd = "/usr/lib/elixir-ls/language_server.sh",
+    -- cmd = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/elixir-ls/language_server.sh",
 
     -- default settings, use the `settings` function to override settings
     settings = elixirls.settings {
