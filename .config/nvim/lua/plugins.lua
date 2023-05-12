@@ -14,6 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'gruvbox-community/gruvbox'
+  use 'tanvirtin/monokai.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'numToStr/Comment.nvim'
   use 'kylechui/nvim-surround'
