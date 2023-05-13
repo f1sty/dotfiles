@@ -1,9 +1,21 @@
 -- Completion Plugin Setup
 local cmp = require'cmp'
+local snippy = require'snippy'
+snippy.setup({
+    mappings = {
+        is = {
+            ['<Tab>'] = 'expand_or_advance',
+            ['<S-Tab>'] = 'previous',
+        },
+        nx = {
+            ['<leader>x'] = 'cut_text',
+        },
+    },
+})
 cmp.setup({
   snippet = {
     expand = function(args)
-      require 'snippy'.expand_snippet(args.body)
+      snippy.expand_snippet(args.body)
     end
   },
   -- Enable LSP snippets

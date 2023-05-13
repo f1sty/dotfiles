@@ -12,6 +12,7 @@ require('plugins.treesitter')
 -- require('plugins.onedark')
 require('plugins.telescope')
 require('plugins.colorizer')
+require('plugins.nvim-tree')
 
 -- LSP Diagnostics Options Setup 
 local sign = function(opts)
