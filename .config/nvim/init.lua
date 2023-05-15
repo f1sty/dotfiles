@@ -45,3 +45,4 @@ vim.diagnostic.config({
 vim.cmd([[
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

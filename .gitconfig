@@ -7,14 +7,14 @@
 [commit]
     gpgsign = on
 [alias]
-    st = status
     a = add
     aa = add --all
-    amend = commit --amend
+    am = commit --amend
     b = branch
     bb = branch -a
     bd = branch -d
     cherry-pit = "!f() { git rebase -p --onto \"$1\"^ \"$1\"; }; f"
+    ca = commit -av
     cm = commit -m
     co = checkout
     d = diff
@@ -23,10 +23,12 @@
     l = log --relative-date --graph --abbrev-commit -10
     ll = log --relative-date --graph --abbrev-commit
     p = push
-    remotes = remote -v
+    pl = pull
+    rem = remote -v
     s = status -s
     sd = d --cached
     sh = show
+    st = status
 [format]
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 [pull]

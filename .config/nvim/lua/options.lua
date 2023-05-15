@@ -64,8 +64,3 @@ vim.opt.spelllang = 'en_us'
 
 -- vim.wo.foldmethod = 'expr'
 -- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-
-vim.cmd([[
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]])
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
