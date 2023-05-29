@@ -61,6 +61,10 @@ vim.opt.updatetime = 300
 vim.opt.mouse = 'a'
 vim.opt.signcolumn = 'yes'
 vim.opt.spelllang = 'en_us'
+vim.opt.matchpairs:append { '<:>' }
+vim.opt.matchpairs:append { '=:;' }
+vim.opt.foldmethod = 'indent'
+
 
 -- vim.wo.foldmethod = 'expr'
 -- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
