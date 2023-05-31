@@ -51,6 +51,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
+export KERL_BUILD_DOCS=yes
 export TERM=screen-256color
 export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
 export LIBVA_DRIVER_NAME=nvidia
