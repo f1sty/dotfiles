@@ -2,6 +2,7 @@ vim9script
 
 g:mapleader = ' '
 nnoremap <leader>s :set spell!<cr>
+nnoremap <leader>g :Git<cr>
 
 # lsp keymaps
 nnoremap <leader>ca :LspCodeAction<cr>
@@ -12,8 +13,8 @@ nnoremap <leader>cp :LspDiag prev<cr>
 nnoremap <leader>cs :LspDiagShow<cr>
 nnoremap <leader>cr :LspShowReferences<cr>
 nnoremap <leader>cf :LspFormat<cr>
-nnoremap <leader>gd :LspGotoDefinition<cr>
-nnoremap <leader>gi :LspGotoImpl<cr>
+nnoremap <leader>d :LspGotoDefinition<cr>
+nnoremap <leader>i :LspGotoImpl<cr>
 nnoremap <leader>h :LspHover<cr>
 
 # buffer navigation
