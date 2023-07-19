@@ -26,12 +26,17 @@ set relativenumber
 set cursorline
 set title
 set autoread
+set hidden
+set wildmenu
+set wildoptions=pum
 set t_Co=256
 set updatetime=300
 set complete+=kspell
 set shortmess+=c	# make less noise
 set scrolloff=10
 set spelllang=en_us
+set omnifunc=lsp#complete
+set completeopt=menu,popup
 # set completeopt=menu,popup,noinsert,noselect
 
 # formatting settings
