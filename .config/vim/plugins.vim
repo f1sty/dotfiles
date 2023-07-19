@@ -10,11 +10,14 @@ plug#begin('~/.config/vim/plugged')
   Plug 'elixir-editors/vim-elixir'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
   Plug 'lilydjwg/colorizer'
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'yegappan/lsp'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 plug#end()
 
 # language servers settings
@@ -54,12 +57,12 @@ var lspOpts = {
   completionTextEdit: v:true,
   completionKinds: {},
   customCompletionKinds: v:false,
-  diagSignErrorText: '☢',
+  diagSignErrorText: '💀',
   diagSignInfoText: 'ℹ️',
   diagSignHintText: '💬',
   diagSignWarningText: '🖖',
   diagVirtualTextAlign: 'above',
-  echoSignature: v:false,
+  echoSignature: v:true,
   hideDisabledCodeActions: v:false,
   highlightDiagInline: v:true,
   hoverInPreview: v:false,
@@ -84,7 +87,12 @@ var lspOpts = {
 autocmd VimEnter * call LspOptionsSet(lspOpts)
 setlocal formatexpr=lsp#lsp#FormatExpr()
 
+# use markdown for VimWiki
 g:vimwiki_list = [{'path': '~/media/docs/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-g:UltiSnipsExpandTrigger = "<c-s>"
-g:UltiSnipsJumpForwardTrigger = "<tab>"
-g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+# snippets settings
+g:snips_author = "Yurii <f1sty> Skrynnykov"
+g:UltiSnipsExpandTrigger = '<c-s>'
+g:UltiSnipsListSnippets = '<c-l>'
+g:UltiSnipsJumpForwardTrigger = "<c-j>"
+g:UltiSnipsJumpBackwardTrigger = "<c-k>"

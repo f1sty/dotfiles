@@ -35,7 +35,7 @@ set complete+=kspell
 set shortmess+=c	# make less noise
 set scrolloff=10
 set spelllang=en_us
-set completeopt=menu,popup
+set completeopt+=popup
 set omnifunc=g:LspOmniFunc
 # set completeopt=menu,popup,noinsert,noselect
 
