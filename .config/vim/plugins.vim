@@ -14,30 +14,78 @@ plug#begin('~/.config/vim/plugged')
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  Plug 'prabirshrestha/vim-lsp'
-  Plug 'thomasfaingnaert/vim-lsp-snippets'
-  Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+  Plug 'yegappan/lsp'
 plug#end()
 
-if executable('rust-analyzer')
-  au User lsp_setup lsp#register_server({name: 'Rust Language Server', cmd: ['rust-analyzer'], whitelist: ['rust']})
-endif
+# language servers settings
+var clangd = {
+  name: 'clangd',
+  filetype: ['c', 'cpp'],
+  path: '/usr/bin/clangd',
+  args: ['--background-index']
+}
 
-if executable('language_server.sh')
-  au User lsp_setup lsp#register_server({name: 'Elixir Language Server', cmd: ['language_server.sh'], whitelist: ['elixir']})
-endif
+var rust = {
+  name: 'rust-analyzer',
+  filetype: ['rust'],
+  path: '/usr/bin/rust-analyzer',
+  args: [],
+  syncInit: v:true
+}
+
+var elixir = {
+  name: 'elixir',
+  filetype: ['elixir'],
+  path: '/home/f1sty/.local/bin/nextls',
+  args: ['--stdio'],
+  syncInit: v:true,
+  omnicompl: v:true
+}
+
+var lspServers = [clangd, rust, elixir]
+autocmd VimEnter * call LspAddServer(lspServers)
+
+var lspOpts = {
+  aleSupport: v:false,
+  autoComplete: v:true,
+  autoHighlight: v:true,
+  autoHighlightDiags: v:true,
+  autoPopulateDiags: v:false,
+  completionMatcher: 'case',
+  completionTextEdit: v:true,
+  completionKinds: {},
+  customCompletionKinds: v:false,
+  diagSignErrorText: '☢',
+  diagSignInfoText: 'ℹ️',
+  diagSignHintText: '💬',
+  diagSignWarningText: '🖖',
+  diagVirtualTextAlign: 'above',
+  echoSignature: v:false,
+  hideDisabledCodeActions: v:false,
+  highlightDiagInline: v:true,
+  hoverInPreview: v:false,
+  ignoreMissingServer: v:false,
+  keepFocusInReferences: v:false,
+  noNewlineInCompletion: v:false,
+  outlineOnRight: v:false,
+  outlineWinSize: 20,
+  showDiagInBalloon: v:true,
+  showDiagInPopup: v:true,
+  showDiagOnStatusLine: v:false,
+  showDiagWithSign: v:true,
+  showDiagWithVirtualText: v:false,
+  showInlayHints: v:false,
+  showSignature: v:true,
+  snippetSupport: v:true,
+  ultisnipsSupport: v:true,
+  usePopupInCodeAction: v:true,
+  useQuickfixForLocations: v:false,
+  useBufferCompletion: v:false,
+}
+autocmd VimEnter * call LspOptionsSet(lspOpts)
+setlocal formatexpr=lsp#lsp#FormatExpr()
 
 g:vimwiki_list = [{'path': '~/media/docs/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-g:lsp_use_native_client = 1
-g:lst_semantic_enabled = 0
-g:lsp_format_sync_timeout = 1000
 g:UltiSnipsExpandTrigger = "<c-s>"
 g:UltiSnipsJumpForwardTrigger = "<tab>"
 g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-# g:ycm_language_server = [
-#       \   { 'name': 'elixir-ls',
-#       \     'filetypes': [ 'elixir' ],
-#       \     'cmdline': [ 'language_server.sh' ],
-#       \   },
-#       \ ]
