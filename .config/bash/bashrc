@@ -41,6 +41,6 @@ complete -cf man
 [[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
 [[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
-# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
 [[ -f $HOME/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
 [[ -f $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash

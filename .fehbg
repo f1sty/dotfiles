@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale --randomize ~/media/images/wallpapers/*
+feh --no-fehbg --bg-scale --randomize /home/f1sty/media/images/wallpapers/*
