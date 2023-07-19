@@ -3,12 +3,7 @@ vim9script
 # use xdg standard path for config files
 set rtp+=~/.config/vim
 
-# setup plugin manager:
-# curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs \
-#    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-call plug#begin('~/.config/vim/plugged')
-call plug#end()
+source ~/.config/vim/plugins.vim
 
 colorscheme slate
 # colorscheme desert
