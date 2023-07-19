@@ -6,6 +6,7 @@ set rtp+=~/.config/vim
 source ~/.config/vim/plugins.vim
 
 colorscheme slate
+# colorscheme koehler
 # colorscheme desert
 # colorscheme evening
 # colorscheme habamax
@@ -32,6 +33,7 @@ set wildoptions=pum
 set t_Co=256
 set updatetime=300
 set complete+=kspell
+set signcolumn=number
 set shortmess+=c	# make less noise
 set scrolloff=10
 set spelllang=en_us

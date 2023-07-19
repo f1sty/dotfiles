@@ -9,6 +9,7 @@ nnoremap <leader>cl :LspCodeLens<cr>
 nnoremap <leader>cd :LspDiag current<cr>
 nnoremap <leader>cn :LspDiag next<cr>
 nnoremap <leader>cp :LspDiag prev<cr>
+nnoremap <leader>cs :LspDiagShow<cr>
 nnoremap <leader>cr :LspShowReferences<cr>
 nnoremap <leader>cf :LspFormat<cr>
 nnoremap <leader>gd :LspGotoDefinition<cr>

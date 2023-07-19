@@ -21,6 +21,45 @@ plug#begin('~/.config/vim/plugged')
 plug#end()
 
 # language servers settings
+var lspOpts = {
+  'aleSupport': false,
+  'autoComplete': true,
+  'autoHighlight': true,
+  'autoHighlightDiags': true,
+  'autoPopulateDiags': false,
+  'completionMatcher': 'case',
+  'completionTextEdit': true,
+  'completionKinds': {},
+  'customCompletionKinds': false,
+  'diagSignErrorText': '💀',
+  'diagSignInfoText': 'ℹ️',
+  'diagSignHintText': '💬',
+  'diagSignWarningText': '🖖',
+  'diagVirtualTextAlign': 'above',
+  'echoSignature': true,
+  'hideDisabledCodeActions': false,
+  'highlightDiagInline': true,
+  'hoverInPreview': false,
+  'ignoreMissingServer': false,
+  'keepFocusInReferences': false,
+  'noNewlineInCompletion': false,
+  'outlineOnRight': false,
+  'outlineWinSize': 20,
+  'showDiagInBalloon': true,
+  'showDiagInPopup': true,
+  'showDiagOnStatusLine': false,
+  'showDiagWithSign': true,
+  'showDiagWithVirtualText': false,
+  'showInlayHints': false,
+  'showSignature': true,
+  'snippetSupport': true,
+  'ultisnipsSupport': true,
+  'usePopupInCodeAction': true,
+  'useQuickfixForLocations': false,
+  'useBufferCompletion': false,
+}
+autocmd VimEnter * g:LspOptionsSet(lspOpts)
+
 var clangd = {
   name: 'clangd',
   filetype: ['c', 'cpp'],
@@ -39,52 +78,14 @@ var rust = {
 var elixir = {
   name: 'elixir',
   filetype: ['elixir'],
-  path: '/home/f1sty/.local/bin/language_server.sh',
+  path: 'language_server.sh',
   args: [],
   syncInit: v:true
 }
 
 var lspServers = [clangd, rust, elixir]
-autocmd VimEnter * call LspAddServer(lspServers)
+autocmd VimEnter * g:LspAddServer(lspServers)
 
-var lspOpts = {
-  aleSupport: v:false,
-  autoComplete: v:true,
-  autoHighlight: v:true,
-  autoHighlightDiags: v:true,
-  autoPopulateDiags: v:false,
-  completionMatcher: 'case',
-  completionTextEdit: v:true,
-  completionKinds: {},
-  customCompletionKinds: v:false,
-  diagSignErrorText: '💀',
-  diagSignInfoText: 'ℹ️',
-  diagSignHintText: '💬',
-  diagSignWarningText: '🖖',
-  diagVirtualTextAlign: 'above',
-  echoSignature: v:true,
-  hideDisabledCodeActions: v:false,
-  highlightDiagInline: v:true,
-  hoverInPreview: v:false,
-  ignoreMissingServer: v:false,
-  keepFocusInReferences: v:false,
-  noNewlineInCompletion: v:false,
-  outlineOnRight: v:false,
-  outlineWinSize: 20,
-  showDiagInBalloon: v:true,
-  showDiagInPopup: v:true,
-  showDiagOnStatusLine: v:false,
-  showDiagWithSign: v:true,
-  showDiagWithVirtualText: v:false,
-  showInlayHints: v:false,
-  showSignature: v:true,
-  snippetSupport: v:true,
-  ultisnipsSupport: v:true,
-  usePopupInCodeAction: v:true,
-  useQuickfixForLocations: v:false,
-  useBufferCompletion: v:false,
-}
-autocmd VimEnter * call LspOptionsSet(lspOpts)
 setlocal formatexpr=lsp#lsp#FormatExpr()
 
 # use markdown for VimWiki
