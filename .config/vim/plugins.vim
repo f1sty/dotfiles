@@ -36,10 +36,9 @@ var rust = {
 var elixir = {
   name: 'elixir',
   filetype: ['elixir'],
-  path: '/home/f1sty/.local/bin/nextls',
-  args: ['--stdio'],
-  syncInit: v:true,
-  omnicompl: v:true
+  path: '/home/f1sty/.local/bin/language_server.sh',
+  args: [],
+  syncInit: v:true
 }
 
 var lspServers = [clangd, rust, elixir]
