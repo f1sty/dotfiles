@@ -18,12 +18,12 @@ nnoremap <leader>i :LspGotoImpl<cr>
 nnoremap <leader>h :LspHover<cr>
 
 # buffer navigation
-nnoremap <C-n> :bn<cr>
-nnoremap <C-p> :bp<cr>
+nnoremap <c-n> :bn<cr>
+nnoremap <c-p> :bp<cr>
 
 # completion menu
-inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<tab>"
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 # fzf.vim mappings
 noremap <c-p> :Files<cr>

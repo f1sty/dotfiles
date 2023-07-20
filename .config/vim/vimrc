@@ -5,6 +5,11 @@ set rtp+=~/.config/vim
 
 source ~/.config/vim/plugins.vim
 
+def g:GitBranch(): string
+  var branch = system('git branch --show-current 2>/dev/null | tr -d "\n"')
+  return strlen(branch) > 0 ? ' [' .. branch .. ']' : ''
+enddef
+
 colorscheme slate
 # colorscheme koehler
 # colorscheme desert
@@ -34,12 +39,14 @@ set t_Co=256
 set updatetime=300
 set complete+=kspell
 set signcolumn=number
-set shortmess+=c	# make less noise
+set shortmess+=c	                               # make less noise
 set scrolloff=10
 set spelllang=en_us
 set completeopt+=popup
 set omnifunc=g:LspOmniFunc
-# set completeopt=menu,popup,noinsert,noselect
+set laststatus=2
+set statusline=%-F%-M\ %-y%{g:GitBranch()}%=0x%B\ %p%% # creates artifacts on screen
+# set statusline=%-F%-M\ %-y%=0x%B\ %p%%
 
 # formatting settings
 set expandtab
