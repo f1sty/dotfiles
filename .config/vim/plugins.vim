@@ -22,7 +22,7 @@ plug#end()
 # language servers settings
 var lspOpts = {
   'aleSupport': false,
-  'autoComplete': true,
+  'autoComplete': false,
   'autoHighlight': true,
   'autoHighlightDiags': true,
   'autoPopulateDiags': false,
@@ -44,18 +44,18 @@ var lspOpts = {
   'noNewlineInCompletion': false,
   'outlineOnRight': false,
   'outlineWinSize': 20,
-  'showDiagInBalloon': true,
-  'showDiagInPopup': true,
-  'showDiagOnStatusLine': false,
+  'showDiagInBalloon': false,
+  'showDiagInPopup': false,
+  'showDiagOnStatusLine': true,
   'showDiagWithSign': true,
   'showDiagWithVirtualText': false,
-  'showInlayHints': false,
+  'showInlayHints': true,
   'showSignature': true,
   'snippetSupport': true,
   'ultisnipsSupport': true,
   'usePopupInCodeAction': true,
   'useQuickfixForLocations': false,
-  'useBufferCompletion': false,
+  'useBufferCompletion': true,
 }
 autocmd VimEnter * g:LspOptionsSet(lspOpts)
 
