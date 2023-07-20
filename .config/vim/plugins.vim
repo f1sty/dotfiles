@@ -23,7 +23,7 @@ plug#end()
 # language servers settings
 var lspOpts = {
   'aleSupport': false,
-  'autoComplete': false,
+  'autoComplete': true,
   'autoHighlight': true,
   'autoHighlightDiags': true,
   'autoPopulateDiags': false,

@@ -22,7 +22,7 @@ nnoremap <c-n> :bn<cr>
 nnoremap <c-p> :bp<cr>
 
 # completion menu
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 # fzf.vim mappings
