@@ -8,7 +8,7 @@ export DOTFILES="$HOME/downloads/.dotfiles"
 BLK="0B" CHR="0B" DIR="04" EXE="06" REG="00" HARDLINK="06" SYMLINK="06" MISSING="00" ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_PLUG='p:preview-tui;o:fzopen;c:fzcd;u:upload;i:getplugs:x:!chmod +x $nnn'
+export NNN_PLUG='p:preview-tui;o:fzopen;c:fzcd;u:getplugs:x:!chmod +x $nnn'
 
 export GOPATH="$HOME/coding/go"
 export FLYCTL_INSTALL="/home/f1sty/.fly"
@@ -55,7 +55,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KERL_BUILD_DOCS=yes
 # export TERM=st-256color
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
+export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
 export LIBVA_DRIVER_NAME=nvidia
 export VDPAU_DRIVER=nvidia
 export NVD_BACKEND=direct
