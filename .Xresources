@@ -59,9 +59,12 @@ xterm*vt100.cursorOffTime: 350
 xterm*vt100.cursorOnTime: 700
 xterm*vt100.cutNewline: false
 xterm*vt100.faceName: RobotoMono Nerd Font
-xterm*vt100.faceSize: 11.0
+xterm*vt100.faceSize: 12.0
 xterm*vt100.locale: true
 xterm*vt100.loginShell: true
+xterm*vt100.scaleHeight: 0.9
 xterm*vt100*translations:      #override \n\
     Ctrl <Key> +:       larger-vt-font() \n\
-    Ctrl <Key> -:       smaller-vt-font()
+    Ctrl <Key> -:       smaller-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)

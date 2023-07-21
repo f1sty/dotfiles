@@ -30,7 +30,7 @@ xhost +
 # dwm_bar.sh &
 deadpan &
 keynav
-picom &
+# picom &
 clipmenud &
 exec startdwm
 # wmname LG3D
