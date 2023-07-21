@@ -43,4 +43,25 @@ Xft.rgba: rgb
 Xft.letterSpace: -1
 Xcursor.theme: Bluecurve
 Xcursor.size: 16
-xterm*metaSendsEscape: true
+
+! XTerm config
+! xterm*metaSendsEscape: true
+! xterm*reportXRes: true
+xterm*termName: xterm-256color
+xterm*title: term
+xterm*toolBar: false
+xterm*vt100.allowTitleOps: false
+xterm*vt100.allowWindowOps: true
+xterm*vt100.curses: true
+xterm*vt100.cursorBlink: true
+xterm*vt100.cursorColor: #689d6a
+xterm*vt100.cursorOffTime: 350
+xterm*vt100.cursorOnTime: 700
+xterm*vt100.cutNewline: false
+xterm*vt100.faceName: RobotoMono Nerd Font
+xterm*vt100.faceSize: 11.0
+xterm*vt100.locale: true
+xterm*vt100.loginShell: true
+xterm*vt100*translations:      #override \n\
+    Ctrl <Key> +:       larger-vt-font() \n\
+    Ctrl <Key> -:       smaller-vt-font()
