@@ -38,21 +38,19 @@ set wildoptions=pum
 set t_Co=256
 set updatetime=300
 set complete+=kspell
-set signcolumn=number
 set shortmess+=c	                               # make less noise
 set scrolloff=10
 set spelllang=en_us
 set completeopt+=popup
 set omnifunc=g:LspOmniFunc
 set laststatus=2
-set statusline=%-F%-M\ %-y%{g:GitBranch()}%=0x%B\ %p%% # creates artifacts on screen
-# set statusline=%-F%-M\ %-y%=0x%B\ %p%%
+set statusline=%-F%-M\ %-y%=0x%B\ %p%%
+# set statusline=%-F%-M\ %-y%{g:GitBranch()}%=0x%B\ %p%% # creates artifacts on screen
 
 # formatting settings
 set expandtab
 set autoindent
 set smartindent
-set nowrap
 set linebreak
 set textwidth=98
 set formatoptions+=tjn
@@ -72,3 +70,9 @@ set fileencoding=utf-8
 set fileformat=unix
 
 source ~/.config/vim/keymaps.vim
+
+# make lsp signs nicer
+highlight LspDiagSignErrorText ctermbg=NONE guibg=NONE ctermfg=red guifg=red
+highlight LspDiagSignHintText ctermbg=NONE guibg=NONE ctermfg=yellow guifg=yellow
+highlight LspDiagSignWarningText ctermbg=NONE guibg=NONE ctermfg=lightblue guifg=lightblue
+highlight LspDiagSignInfoText ctermbg=NONE guibg=NONE ctermfg=green guifg=green

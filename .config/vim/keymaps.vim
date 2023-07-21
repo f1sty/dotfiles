@@ -18,8 +18,8 @@ nnoremap <leader>i :LspGotoImpl<cr>
 nnoremap <leader>h :LspHover<cr>
 
 # buffer navigation
-nnoremap <c-n> :bn<cr>
-nnoremap <c-p> :bp<cr>
+nnoremap <c-f> :bn<cr>
+nnoremap <c-b> :bp<cr>
 
 # completion menu
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
