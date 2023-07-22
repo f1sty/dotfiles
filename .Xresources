@@ -63,6 +63,8 @@ xterm*vt100.faceSize: 12.0
 xterm*vt100.locale: true
 xterm*vt100.loginShell: true
 xterm*vt100.scaleHeight: 0.9
+xterm*vt100.backarrowKey: false
+xterm.ttyModes: erase ^?
 xterm*vt100*translations:      #override \n\
     Ctrl <Key> +:       larger-vt-font() \n\
     Ctrl <Key> -:       smaller-vt-font() \n\
