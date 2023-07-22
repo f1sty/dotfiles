@@ -84,7 +84,7 @@ var lspOpts = {
   'ultisnipsSupport': true,
   'usePopupInCodeAction': true,
   'useQuickfixForLocations': false,
-  'useBufferCompletion': false,
+  'useBufferCompletion': true,
 }
 autocmd VimEnter * g:LspOptionsSet(lspOpts)
 
