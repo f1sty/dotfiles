@@ -2,7 +2,9 @@ vim9script
 
 g:mapleader = ' '
 nnoremap <leader>s :set spell!<cr>
-nnoremap <leader>g :Git<cr>
+nnoremap <leader>gc :Git<cr>
+nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>gs :Git pull<cr>
 
 # lsp keymaps
 nnoremap <leader>ca :LspCodeAction<cr>
