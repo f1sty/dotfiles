@@ -3,3 +3,4 @@
 "\C-a.":beginning-of-line
 "\C-e.":end-of-line
 "\C-l":clear-screen
+set enable-keypad On
