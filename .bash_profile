@@ -58,6 +58,8 @@ export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:
 export LIBVA_DRIVER_NAME=nvidia
 export VDPAU_DRIVER=nvidia
 export NVD_BACKEND=direct
+export BEMENU_OPTS="--list 40 --prompt '>' --binding vim"
+export WLR_NO_HARDWARE_CURSORS=1
 
 [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
 [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
@@ -65,4 +67,3 @@ export NVD_BACKEND=direct
 [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 [[ -f "$HOME/scripts/all_elixir_auto_complete.bash" ]] && source "$HOME/scripts/all_elixir_auto_complete.bash"
-export WLR_NO_HARDWARE_CURSORS=1
