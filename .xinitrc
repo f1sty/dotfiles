@@ -29,10 +29,10 @@ xhost +
 # slstatus &
 # dwm_bar.sh &
 deadpan &
-keynav
+# keynav
 # picom &
 clipmenud &
-exec startdwm
+exec dwm
 # wmname LG3D
 
 # japanese inpput stuff

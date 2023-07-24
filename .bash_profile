@@ -65,3 +65,4 @@ export NVD_BACKEND=direct
 [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 [[ -f "$HOME/scripts/all_elixir_auto_complete.bash" ]] && source "$HOME/scripts/all_elixir_auto_complete.bash"
+export WLR_NO_HARDWARE_CURSORS=1
