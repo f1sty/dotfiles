@@ -155,7 +155,16 @@ channels = (
     chatnet = "liberachat";
     autojoin = "yes";
   },
-  { name = "#elixir"; chatnet = "liberachat"; autojoin = "yes"; }
+  { name = "#elixir"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "#wlroots"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "##rust"; chatnet = "liberachat"; autojoin = "yes"; },
+  { 
+    name = "##rust-offtopic";
+    chatnet = "liberachat";
+    autojoin = "yes";
+  },
+  { name = "#archlinux-ua"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "#dwl"; chatnet = "liberachat"; autojoin = "yes"; }
 );
 
 aliases = {

@@ -35,7 +35,7 @@ clipmenud &
 exec dwm
 # wmname LG3D
 
-# japanese inpput stuff
+# japanese input stuff
 # export GTK_IM_MODULE=uim
 # export QT_IM_MODULE=uim
 # uim-xim &
