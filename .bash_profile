@@ -56,9 +56,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export KERL_BUILD_DOCS=yes
 # export TERM=st-256color
 export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
-export LIBVA_DRIVER_NAME=nvidia
-export VDPAU_DRIVER=nvidia
-export NVD_BACKEND=direct
+# export LIBVA_DRIVER_NAME=nvidia
+# export VDPAU_DRIVER=nvidia
+# export NVD_BACKEND=direct
 export BEMENU_OPTS="--list 40 --prompt '>' --binding vim"
 export WLR_NO_HARDWARE_CURSORS=1
 
