@@ -11,7 +11,6 @@ plug#begin('~/.config/vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'lilydjwg/colorizer'
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'

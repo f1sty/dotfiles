@@ -32,6 +32,7 @@ deadpan &
 # keynav
 # picom &
 clipmenud &
+systemctl --user start redshift
 exec dwm
 # wmname LG3D
 
