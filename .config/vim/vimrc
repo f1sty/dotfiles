@@ -5,10 +5,10 @@ set rtp+=~/.config/vim
 
 source ~/.config/vim/plugins.vim
 
-def g:GitBranch(): string
-  var branch = system('git branch --show-current 2>/dev/null | tr -d "\n"')
-  return strlen(branch) > 0 ? ' [' .. branch .. ']' : ''
-enddef
+# def g:GitBranch(): string
+#   var branch = system('git branch --show-current 2>/dev/null | tr -d "\n"')
+#   return strlen(branch) > 0 ? ' [' .. branch .. ']' : ''
+# enddef
 
 colorscheme slate
 # colorscheme koehler
