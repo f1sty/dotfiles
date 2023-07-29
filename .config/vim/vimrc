@@ -72,7 +72,10 @@ set fileformat=unix
 source ~/.config/vim/keymaps.vim
 
 # make lsp signs nicer
-highlight LspDiagSignErrorText ctermbg=NONE guibg=NONE ctermfg=red guifg=red
-highlight LspDiagSignHintText ctermbg=NONE guibg=NONE ctermfg=yellow guifg=yellow
-highlight LspDiagSignWarningText ctermbg=NONE guibg=NONE ctermfg=lightblue guifg=lightblue
-highlight LspDiagSignInfoText ctermbg=NONE guibg=NONE ctermfg=green guifg=green
+highlight LspErrorText ctermbg=NONE guibg=NONE ctermfg=red guifg=red
+highlight LspHintText ctermbg=NONE guibg=NONE ctermfg=lightblue guifg=lightblue
+highlight LspWarningText ctermbg=NONE guibg=NONE ctermfg=yellow guifg=yellow
+highlight LspInformationText ctermbg=NONE guibg=NONE ctermfg=green guifg=green
+highlight LspInlayHintsType ctermbg=NONE guibg=NONE ctermfg=darkgreen guifg=darkgreen
+highlight LspInlayHintsParameter ctermbg=NONE guibg=NONE ctermfg=lightblue guifg=lightblue
+highlight lspReference ctermfg=blue guifg=blue ctermbg=NONE guibg=NONE

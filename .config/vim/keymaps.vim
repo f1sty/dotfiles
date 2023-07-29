@@ -9,14 +9,12 @@ nnoremap <leader>gs :Git pull<cr>
 # lsp keymaps
 nnoremap <leader>ca :LspCodeAction<cr>
 nnoremap <leader>cl :LspCodeLens<cr>
-nnoremap <leader>cd :LspDiag current<cr>
-nnoremap <leader>cn :LspDiag next<cr>
-nnoremap <leader>cp :LspDiag prev<cr>
-nnoremap <leader>cs :LspDiagShow<cr>
-nnoremap <leader>cr :LspShowReferences<cr>
-nnoremap <leader>cf :LspFormat<cr>
-nnoremap <leader>d :LspGotoDefinition<cr>
-nnoremap <leader>i :LspGotoImpl<cr>
+nnoremap <leader>cd :LspDeclaration<cr>
+nnoremap <leader>cn :LspNextDiagnostic<cr>
+nnoremap <leader>cp :LspPreviousDiganostic<cr>
+nnoremap <leader>cr :LspReferences<cr>
+nnoremap <leader>cf :LspDocumentFormat<cr>
+nnoremap <leader>d :LspDefinition<cr>
 nnoremap <leader>h :LspHover<cr>
 
 # buffer navigation
