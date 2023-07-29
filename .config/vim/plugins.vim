@@ -14,78 +14,51 @@ plug#begin('~/.config/vim/plugged')
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  Plug 'yegappan/lsp'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+  Plug 'prabirshrestha/asyncomplete-file.vim'
+  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 plug#end()
 
-# language servers settings
-var lspOpts = {
-  'aleSupport': false,
-  'autoComplete': false,
-  'autoHighlight': true,
-  'autoHighlightDiags': true,
-  'autoPopulateDiags': false,
-  'completionMatcher': 'case',
-  'completionTextEdit': true,
-  'completionKinds': {},
-  'customCompletionKinds': false,
-  'diagSignErrorText': '💀',
-  'diagSignInfoText': 'ℹ️',
-  'diagSignHintText': '💬',
-  'diagSignWarningText': '🖖',
-  'diagVirtualTextAlign': 'above',
-  'echoSignature': true,
-  'hideDisabledCodeActions': false,
-  'highlightDiagInline': true,
-  'hoverInPreview': false,
-  'ignoreMissingServer': false,
-  'keepFocusInReferences': false,
-  'noNewlineInCompletion': false,
-  'outlineOnRight': false,
-  'outlineWinSize': 20,
-  'showDiagInBalloon': false,
-  'showDiagInPopup': false,
-  'showDiagOnStatusLine': true,
-  'showDiagWithSign': true,
-  'showDiagWithVirtualText': false,
-  'showInlayHints': true,
-  'showSignature': true,
-  'snippetSupport': true,
-  'ultisnipsSupport': true,
-  'usePopupInCodeAction': true,
-  'useQuickfixForLocations': false,
-  'useBufferCompletion': true,
-}
-autocmd VimEnter * g:LspOptionsSet(lspOpts)
+# language servers / auto-completion settings
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+      \ 'name': 'buffer',
+      \ 'allowlist': ['*'],
+      \ 'blocklist': ['go'],
+      \ 'completor': function('asyncomplete#sources#buffer#completor'),
+      \ 'config': {
+      \    'max_buffer_size': 5000000,
+      \  },
+      \ }))
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+      \ 'name': 'file',
+      \ 'allowlist': ['*'],
+      \ 'priority': 10,
+      \ 'completor': function('asyncomplete#sources#file#completor')
+      \ }))
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+      \ 'name': 'ultisnips',
+      \ 'allowlist': ['*'],
+      \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+      \ }))
 
-var clangd = {
-  name: 'clangd',
-  filetype: ['c', 'cpp'],
-  path: '/usr/bin/clangd',
-  args: ['--background-index']
-}
-
-var rust = {
-  name: 'rust-analyzer',
-  filetype: ['rust'],
-  path: '/usr/bin/rust-analyzer',
-  args: [],
-  syncInit: v:true
-}
-
-var elixir = {
-  name: 'elixir',
-  filetype: ['elixir'],
-  path: 'language_server.sh',
-  args: [],
-  syncInit: v:true
-}
-
-var lspServers = [clangd, rust, elixir]
-autocmd VimEnter * g:LspAddServer(lspServers)
-
-setlocal formatexpr=lsp#lsp#FormatExpr()
+g:lsp_settings = {'elixir-ls': {'cmd': ['language_server.sh']}}
+g:lsp_use_native_client = 1
+g:lsp_diagnostics_highlights_enabled = 0
+g:lsp_diagnostics_signs_error = {'text': '✗'}
+g:lsp_diagnostics_signs_warning = {'text': '‼'}
+g:lsp_diagnostics_signs_hint = {'text': '💬'}
+g:lsp_diagnostics_signs_information = {'text': 'ℹ️'}
+g:lsp_document_code_action_signs_hint = {'text': '🔨'}
+g:lsp_diagnostics_virtual_text_enabled = 1
+g:lsp_diagnostics_virtual_text_align = "right"
+g:lsp_inlay_hints_enabled = 1
+g:lsp_document_highlight_delay = 200
 
 # use markdown for VimWiki
 g:vimwiki_list = [{'path': '~/media/docs/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
