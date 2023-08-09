@@ -44,6 +44,7 @@ Xft.letterSpace: -1
 Xcursor.theme: Bluecurve
 Xcursor.size: 16
 
+Emacs.font: RobotoMono Nerd Font-14
 ! XTerm config
 ! xterm*metaSendsEscape: true
 ! xterm*reportXRes: true
