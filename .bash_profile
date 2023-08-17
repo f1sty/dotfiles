@@ -52,7 +52,7 @@ export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME}/android/emulator"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_AWT_WM_NONREPARENTING=1
-export ERL_AFLAGS="-kernel shell_history enabled"
+export ERL_AFLAGS="-kernel shell_history enabled -enable-feature all"
 export KERL_BUILD_DOCS=yes
 # export TERM=st-256color
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
