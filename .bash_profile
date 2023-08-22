@@ -12,7 +12,6 @@ export NNN_PLUG='p:preview-tui;o:fzopen;c:fzcd;u:getplugs:x:!chmod +x $nnn'
 
 export GOPATH="$HOME/coding/go"
 export FLYCTL_INSTALL="/home/f1sty/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export CM_LAUNCHER=rofi
 export ERL_TOP="$HOME/src/otp"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -55,7 +54,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KERL_BUILD_DOCS=yes
 # export TERM=st-256color
-export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
+export PATH=$FLYCTL_INSTALL/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
 # export LIBVA_DRIVER_NAME=nvidia
 # export VDPAU_DRIVER=nvidia
 # export NVD_BACKEND=direct
