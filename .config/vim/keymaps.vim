@@ -1,19 +1,19 @@
 vim9script
 
-g:mapleader = ' '
+# g:mapleader = ' '
 nnoremap <leader>s :set spell!<cr>
-nnoremap <leader>gc :Git<cr>
+nnoremap <leader>gg :Git<cr>
 nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>gs :Git pull<cr>
 
 # lsp keymaps
-nnoremap <leader>ca :LspCodeAction<cr>
-nnoremap <leader>cl :LspCodeLens<cr>
-nnoremap <leader>cd :LspDeclaration<cr>
-nnoremap <leader>cn :LspNextDiagnostic<cr>
-nnoremap <leader>cp :LspPreviousDiganostic<cr>
-nnoremap <leader>cr :LspReferences<cr>
-nnoremap <leader>cf :LspDocumentFormat<cr>
+nnoremap <leader>la :LspCodeAction<cr>
+nnoremap <leader>ll :LspCodeLens<cr>
+nnoremap <leader>ld :LspDeclaration<cr>
+nnoremap <leader>ln :LspNextDiagnostic<cr>
+nnoremap <leader>lp :LspPreviousDiganostic<cr>
+nnoremap <leader>lr :LspReferences<cr>
+nnoremap <leader>lf :LspDocumentFormat<cr>
 nnoremap <leader>d :LspDefinition<cr>
 nnoremap <leader>h :LspHover<cr>
 
