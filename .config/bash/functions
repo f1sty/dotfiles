@@ -1,10 +1,14 @@
 sd ()
 {
-    sdcv -n --utf8-output --color "$@" 2>&1 | \
-        fold --width=$(tput cols) | \
-        less -FRX
+  sdcv -n --utf8-output --color "$@" 2>&1 | \
+    fold --width=$(tput cols) | \
+    less -FRX
 }
 remind ()
 {
-    echo "mpv $HOME/src/bell.mp3" | at now + "$1" |& tail -n1
+  echo "mpv $HOME/src/bell.mp3" | at now + "$1" |& tail -n1
+}
+repo ()
+{
+  gh repo view --jq '.sshUrl' --json sshUrl $1
 }
