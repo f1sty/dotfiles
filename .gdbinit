@@ -1,3 +1,4 @@
 # source /usr/share/gef/gef.py
-layout regs
 set debuginfod enabled on
+set disassembly-flavor intel
+layout split
