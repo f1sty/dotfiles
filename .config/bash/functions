@@ -12,7 +12,3 @@ repo ()
 {
   gh repo view --jq '.sshUrl' --json sshUrl $1
 }
-elastic ()
-{
-  curl --cacert $XDG_DATA_HOME/http_ca.crt -u elastic:$ELASTIC_PASSWORD -X $1 "https://localhost:9200$2" -H 'Content-Type: application/json' $3
-}
