@@ -31,3 +31,12 @@ noremap <leader>ff :GFiles<cr>
 noremap <leader>fb :Buffers<cr>
 noremap <leader>fg :Rg<cr>
 noremap <leader>fs :Snippets<cr>
+
+# make/quickfix mappings
+nnoremap <leader>qq :copen<cr>
+nnoremap <leader>qc :cclose<cr>
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprevious<cr>
+nnoremap <leader>m :silent make<cr><c-l>
+nnoremap <leader>pm :set makeprg=
+nnoremap <leader>pf :set formatprg=
