@@ -3,7 +3,7 @@
     email = truef1s7@gmail.com
     signingkey = C739A28DF1A55D039070685C6E178979899A8A20
 [core]
-    editor = vim
+    editor = nvim
 [commit]
     gpgsign = on
 [alias]
@@ -36,9 +36,9 @@
 [init]
     defaultBranch = main
 [diff]
-    tool = vimdiff
+    tool = nvim -d
 [merge]
-    tool = vimdiff
+    tool = nvim -d
 ; [credential "https://github.com"]
 ; 	helper = 
 ; 	helper = !/usr/bin/gh auth git-credential
