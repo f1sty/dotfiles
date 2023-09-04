@@ -1,7 +1,7 @@
 local set = vim.keymap.set
 
 set('n', '<leader>s', '<cmd>set spell!<cr>')
-set('n', '<leader>g', '<cmd>Neogit<cr>')
+set('n', '<leader>g', '<cmd>Neogit cwd=%:p:h<cr>')
 
 -- buffer navigation
 set('n', '<c-f>', '<cmd>bn<cr>')
