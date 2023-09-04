@@ -2,6 +2,7 @@ vim9script
 
 # use xdg standard path for config files
 set rtp+=~/.config/vim
+set path+=/usr/avr/include
 
 source ~/.config/vim/plugins.vim
 
