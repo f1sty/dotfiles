@@ -1,37 +1,27 @@
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+local set = vim.keymap.set
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+set('n', '<leader>s', '<cmd>set spell!<cr>')
+set('n', '<leader>g', '<cmd>Neogit cwd=%:p:h<cr>')
 
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+-- buffer navigation
+set('n', '<c-f>', '<cmd>bn<cr>')
+set('n', '<c-b>', '<cmd>bp<cr>')
 
--- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- telescope.nvim mappings
+local ts = require('telescope.builtin')
+set('n', '<c-p>', ts.find_files, {})
+set('n', '<leader>ff', ts.git_files, {})
+set('n', '<leader>fb', ts.buffers, {})
+set('n', '<leader>fg', ts.live_grep, {})
+set('n', '<leader>fs', ts.grep_string, {})
+set('n', '<leader>fc', ts.git_commits, {})
+set('n', '<leader>fj', ts.jumplist, {})
+set('n', '<leader>fh', ts.help_tags, {})
+set('n', '<leader>fm', ts.man_pages, {})
+set('n', '<leader>ft', ts.treesitter, {})
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
--- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
-
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>p", "<cmd>silent!!firefox %<cr>")
-vim.keymap.set("n", "<leader>c", "<cmd>setlocal spell spelllang=en_us<cr>")
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<cr>", { silent = true })
+-- make/quickfix mappings
+set('n', '<leader>qq', ts.quickfix, {})
+set('n', '<leader>m', '<cmd>silent make<cr>')
+set('n', '<leader>pm', '<cmd>set makeprg=')
+set('n', '<leader>pf', '<cmd>set formatprg=')
