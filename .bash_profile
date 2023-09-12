@@ -60,6 +60,7 @@ export PATH=$FLYCTL_INSTALL/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:
 # export NVD_BACKEND=direct
 export BEMENU_OPTS="--list 40 --prompt '>' --binding vim"
 export WLR_NO_HARDWARE_CURSORS=1
+export LFS=/mnt/hdd/lfs
 
 [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
 [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
