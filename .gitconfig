@@ -1,7 +1,7 @@
 [user]
     name = Yurii Skrynnykov
     email = truef1s7@gmail.com
-    signingkey = C739A28DF1A55D039070685C6E178979899A8A20
+    signingkey = 9055CEB79D106FC68CC3BA155145F09CE60FDB47
 [core]
     editor = nvim
 [commit]
