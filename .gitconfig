@@ -47,3 +47,5 @@
 ; 	helper = !/usr/bin/gh auth git-credential
 [url "git@github.com:"]
 	insteadOf = git://github.com/
+[fetch]
+	prune = on
