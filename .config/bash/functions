@@ -12,3 +12,7 @@ repo ()
 {
   gh repo view --jq '.sshUrl' --json sshUrl $1
 }
+aur ()
+{
+  git clone "https://aur.archlinux.org/$1"
+}

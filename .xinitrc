@@ -9,32 +9,21 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-setxkbmap -layout "us,ua" -option "grp:shifts_toggle,terminate:ctrl_alt_bksp,compose:menu"
-# setxkbmap -layout "us,ua,jp" -variant ",,kana" -option "grp:alt_shift_toggle,terminate:ctrl_alt_bksp,compose:menu"
-# sudo mouseless --config ~/.config/mouseless/config.yaml &
+systemctl --user start redshift.service
+systemctl --user start clipmenud.service
+
+# setxkbmap -layout "us,ua,jp" -variant ",,kana" -option "grp:shifts_toggle,terminate:ctrl_alt_bksp,compose:menu"
+# keynav
 xset -dpms
 xset s off
-
 # key refresh rate
 xset r rate 300 35
-
 # mouse acceleration
 xset m 3/2 6
-
 # set random background
 ~/.fehbg &
-
-xsetroot -cursor_name left_ptr
-xhost +
-# slstatus &
-# dwm_bar.sh &
 deadpan &
-# keynav
-# picom &
-clipmenud &
-systemctl --user start redshift
 exec dwm
-# wmname LG3D
 
 # japanese input stuff
 # export GTK_IM_MODULE=uim
