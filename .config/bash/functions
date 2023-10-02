@@ -16,3 +16,7 @@ aur ()
 {
   git clone "https://aur.archlinux.org/$1"
 }
+pkgs ()
+{
+  cd ~/pkgs
+}

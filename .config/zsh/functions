@@ -1,11 +1,22 @@
 function sd ()
 {
-    sdcv -n --utf8-output --color "$@" 2>&1 | \
-        fold --width=$(tput cols) | \
-        less -FRX
+  sdcv -n --utf8-output --color "$@" 2>&1 | \
+    fold --width=$(tput cols) | \
+    less -FRX
 }
-
 function remind ()
 {
-    echo "mpv $HOME/downloads/bell.wav" | at now + "$1" |& tail -n1
+  echo "mpv $HOME/src/bell.mp3" | at now + "$1" |& tail -n1
+}
+function repo ()
+{
+  gh repo view --jq '.sshUrl' --json sshUrl $1
+}
+function aur ()
+{
+  git clone "https://aur.archlinux.org/$1"
+}
+function pkgs ()
+{
+  cd ~/pkgs
 }
