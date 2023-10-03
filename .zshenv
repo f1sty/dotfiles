@@ -63,8 +63,8 @@ ERL_AFLAGS="-kernel shell_history enabled"
 # LFS=/mnt/hdd/lfs
 
 path=("$HOME/scripts" "$HOME/.local/bin" "$XDG_CACHE_HOME/rebar3/bin" "$HOME/.mix/escripts" $path)
+# [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 # [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
 # [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
 # [[ -f "$XDG_CONFIG_HOME/bash/functions" ]] && source "$XDG_CONFIG_HOME/bash/functions"
-# [[ -f "$HOME/.secrets" ]] && source "$HOME/.secrets"
 # [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"

@@ -1,6 +1,6 @@
 local o = vim.o
 
-vim.cmd.colorscheme('monokai_ristretto')
+vim.cmd.colorscheme('habamax')
 -- colorscheme koehler
 -- colorscheme desert
 -- colorscheme evening

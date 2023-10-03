@@ -13,8 +13,15 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   { 'numToStr/Comment.nvim', opts = {}, lazy = false, },
-  'tanvirtin/monokai.nvim',
-  'kylechui/nvim-surround',
+  { 'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+        require('nvim-surround').setup()
+    end
+  },
+
+  { 'godlygeek/tabular' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
