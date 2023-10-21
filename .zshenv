@@ -49,8 +49,8 @@ ANDROID_PREFS_ROOT="${XDG_CONFIG_HOME}/android"
 ADB_KEYS_PATH="$ANDROID_PREFS_ROOT"
 ANDROID_EMULATOR_HOME="${XDG_DATA_HOME}/android/emulator"
 GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 _JAVA_AWT_WM_NONREPARENTING=1
+JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 ERL_AFLAGS="-kernel shell_history enabled"
 # KERL_BUILD_DOCS=yes
 # export TERM=st-256color
