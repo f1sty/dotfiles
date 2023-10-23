@@ -1,3 +1,5 @@
+VPN_PROFILE=$(pass show vpn-profile)
+
 sd ()
 {
   sdcv -n --utf8-output --color "$@" 2>&1 | \
@@ -16,7 +18,27 @@ aur ()
 {
   git clone "https://aur.archlinux.org/$1"
 }
-pkgs ()
+pk ()
 {
-  cd ~/pkgs
+  cd ~/pkgs/$1
+}
+vpn ()
+{
+  case $1 in
+    up)
+      echo "fortivpn connect $VPN_PROFILE"
+      fortivpn connect $VPN_PROFILE
+    ;;
+    down)
+      echo "fortivpn disconnect"
+      fortivpn disconnect
+    ;;
+    status)
+      echo "fortivpn status"
+      fortivpn status
+    ;;
+    *)
+      echo "commands: up, down, status"
+    ;;
+  esac
 }
