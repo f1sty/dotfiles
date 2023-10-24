@@ -6,7 +6,7 @@
   "cmp-snippy": { "branch": "master", "commit": "c4dc31232c510cd32d4708701e6f06746d46df90" },
   "diffview.nvim": { "branch": "main", "commit": "a111d19ccceac6530448d329c63f998f77b5626e" },
   "fzf-lua": { "branch": "main", "commit": "1ff0278882db9786fef6f77cbcea7d8fa4b9ccee" },
-  "lazy.nvim": { "branch": "main", "commit": "59335c5b9d116f5d3948f833288a89e2a829a005" },
+  "lazy.nvim": { "branch": "main", "commit": "4c75c8eeb957a99aa44ce8e526c04340ab358c5e" },
   "neogit": { "branch": "master", "commit": "ed99c59d7fda3ba5e2ce9a3adc0a8eb5ebfa6c8f" },
   "nvim-cmp": { "branch": "main", "commit": "5dce1b778b85c717f6614e3f4da45e9f19f54435" },
   "nvim-snippy": { "branch": "master", "commit": "5787f088c99c04309a8aa6363fd3ac9a5a26b780" },

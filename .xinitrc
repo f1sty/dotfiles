@@ -9,7 +9,7 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# systemctl --user start redshift.service
+systemctl --user start redshift.service
 systemctl --user start clipmenud.service
 
 # setxkbmap -layout "us,ua,jp" -variant ",,kana" -option "grp:shifts_toggle,terminate:ctrl_alt_bksp,compose:menu"
