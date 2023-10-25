@@ -61,6 +61,7 @@ export PATH=$HOME/.cache/rebar3/bin:$FLYCTL_INSTALL/bin:$HOME/.cargo/bin:$HOME/.
 export BEMENU_OPTS="--list 40 --prompt '>' --binding vim"
 export WLR_NO_HARDWARE_CURSORS=1
 export LFS=/mnt/hdd/lfs
+export AWS_DEFAULT_PROFILE=$(pass show aws-profile)
 
 [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
 [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
