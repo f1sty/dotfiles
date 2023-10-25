@@ -42,3 +42,23 @@ vpn ()
     ;;
   esac
 }
+vpn3 ()
+{
+  case $1 in
+    up)
+      echo "openvpn3 session-start --config $VPN_PROFILE"
+      openvpn3 session-start --config $VPN_PROFILE
+    ;;
+    down)
+      echo "openvpn3 session-manage --disconnect --config $VPN_PROFILE"
+      openvpn3 session-manage --disconnect --config $VPN_PROFILE
+    ;;
+    status)
+      echo "openvpn3 session-stats --config $VPN_PROFILE"
+      openvpn3 session-stats --config $VPN_PROFILE
+    ;;
+    *)
+      echo "commands: up, down, status"
+    ;;
+  esac
+}
