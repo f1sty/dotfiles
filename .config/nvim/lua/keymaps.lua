@@ -21,7 +21,9 @@ set('n', '<leader>fm', ts.man_pages, {})
 set('n', '<leader>ft', ts.treesitter, {})
 
 -- make/quickfix mappings
-set('n', '<leader>qf', ts.quickfix, {})
+set('n', '<leader>cc', '<cmd>cc<cr>')
+set('n', '<leader>cn', '<cmd>cn<cr>')
+set('n', '<leader>cp', '<cmd>cp<cr>')
 set('n', '<leader>mm', '<cmd>make<cr>')
 set('n', '<leader>ma', '<cmd>make all<cr>')
 set('n', '<leader>mi', '<cmd>make install<cr>')
