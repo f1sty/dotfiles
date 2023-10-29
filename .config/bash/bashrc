@@ -1,46 +1,45 @@
 [[ $- != *i* ]] && return
-set -o vi
 
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty)"
 
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=erasedups
-HISTSIZE=100000
-HISTFILESIZE=100000
+HISTCONTROL="erasedups" # don't put duplicate lines or lines starting with space in the history.
+HISTSIZE="-1"           # unlimited
+HISTFILESIZE="-1"       # do not truncate history file
 
-# # check the window size after each command and, if necessary,
-# # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-# # append to the history file, don't overwrite it
-shopt -s histappend
-shopt -s autocd
+shopt -so vi            # use a vi-style line editing interface
+shopt -so noclobber     # disallow existing regular files to be overwritten by redirection of output
+shopt -so pipefail      # return any non-zero return code if there was one
+shopt -s checkwinsize   # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+shopt -s histappend     # append to the history file, don't overwrite it
+shopt -s autocd         # if command is a dir name - `cd` into it
 shopt -s expand_aliases
 shopt -s cdspell
 shopt -s dirspell
 shopt -s globstar
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 GIT_PS1_SHOWDIRTYSTATE="true"
 GIT_PS1_SHOWSTASHSTATE="true"
 GIT_PS1_SHOWUNTRACKEDFILES="true"
 GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_STATESEPARATOR="|"
+GIT_PS1_STATESEPARATOR=""
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWCOLORHINTS="true"
 
-[[ -f $HOME/scripts/git-prompt.sh ]] && source $HOME/scripts/git-prompt.sh
-
 # PROMPT_COMMAND='__git_ps1 "\w " "❯ "'
-PS1='[\u@\h:\W$(__git_ps1 " (%s)")]\$ '
+PS1='\W $(__git_ps1 "[%s]")\$ '
 
 complete -cf sudo
 complete -cf man
 
-[[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
-[[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+[[ -x /usr/bin/lesspipe.sh ]] && eval "$(SHELL=/bin/sh lesspipe.sh)"
+[[ -x /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
+[[ -x /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
+# asdf
 # git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
-[[ -f $HOME/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
-[[ -f $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash
+[[ -x $HOME/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
+[[ -x $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash
+
+# git prompt
+[[ -x $HOME/scripts/git-prompt.sh ]] && source $HOME/scripts/git-prompt.sh
