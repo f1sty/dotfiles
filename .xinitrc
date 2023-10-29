@@ -23,6 +23,7 @@ xset m 3/2 6
 # set random background
 ~/.fehbg &
 deadpan &
+picom &
 exec dwm
 
 # japanese input stuff
