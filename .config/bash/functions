@@ -62,3 +62,8 @@ vpn3 ()
     ;;
   esac
 }
+
+load_test ()
+{
+  vegeta attack -rate "$1" -duration "$2" -targets "$3" | tee "$4" | vegeta report
+}
