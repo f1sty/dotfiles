@@ -3,4 +3,4 @@ vim.lsp.start({
   cmd = {'gopls'},
   root_dir = vim.fs.dirname(vim.fs.find({'main.go', 'src/main.go'}, { upward = true })[1]),
 })
-vim.o.shiftwidth = 4
+vim.o.shiftwidth = 8
