@@ -3,11 +3,16 @@
     "height": 20,
     "modules-left": ["dwl/tags"],
     "modules-center": [],
-    "modules-right": ["wireplumber", "memory", "temperature", "battery", "clock", "tray"],
+    "modules-right": ["wireplumber", "memory", "disk", "temperature", "battery", "clock", "tray"],
     "dwl/tags": {
         "num-tags": 9,
         "tag-labels": ["", "", "", "", "", "", "", "", ".."],
         "disable-click": false
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{free}",
+        "path": "/"
     },
     "tray": {
         // "icon-size": 21,
