@@ -31,3 +31,4 @@
 	ca = commit --amend
 	pu = push
 	pl = pull
+	prev = switch -
