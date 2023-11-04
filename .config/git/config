@@ -6,46 +6,13 @@
     editor = nvim
 [commit]
     gpgsign = on
-[alias]
-    a = add
-    aa = add --all
-    am = commit --amend
-    b = branch
-    bb = branch -a
-    bd = branch -d
-    cherry-pit = "!f() { git rebase -p --onto \"$1\"^ \"$1\"; }; f"
-    ca = commit -av
-    cm = commit -m
-    co = checkout
-    d = diff
-    ec = config --global -e
-    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-    l = log --relative-date --graph --abbrev-commit -10
-    ll = log --relative-date --graph --abbrev-commit
-    p = push
-    pl = pull
-    rem = remote -v
-    s = status -s
-    sd = d --cached
-    sh = show
-    st = status
 [format]
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
-[pull]
-    rebase = false
 [init]
-    defaultBranch = main
+    defaultbranch = main
 [diff]
     tool = nvim -d
 [merge]
     tool = nvim -d
-; [credential "https://github.com"]
-; 	helper = 
-; 	helper = !/usr/bin/gh auth git-credential
-; [credential "https://gist.github.com"]
-; 	helper = 
-; 	helper = !/usr/bin/gh auth git-credential
 [url "git@github.com:"]
-	insteadOf = git://github.com/
-[fetch]
-	prune = on
+	insteadof = git://github.com/
