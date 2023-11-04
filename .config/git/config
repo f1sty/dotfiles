@@ -18,3 +18,16 @@
 	insteadof = git://github.com/
 [pull]
 	rebase = true
+[alias]
+	co = checkout
+	cv = commit -v
+	sw = switch
+	st = status
+	unstage = restore --staged
+	last = log -1 HEAD
+	last5 = log -5 HEAD
+	a = add
+	aa = add --all
+	ca = commit --amend
+	pu = push
+	pl = pull
