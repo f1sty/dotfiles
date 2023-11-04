@@ -16,3 +16,5 @@
     tool = nvim -d
 [url "git@github.com:"]
 	insteadof = git://github.com/
+[pull]
+	rebase = true
