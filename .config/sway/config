@@ -238,11 +238,12 @@ set   $gray       #a89984
 set   $darkgray   #1d2021
 
 bar {
-    position top
+    position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%a %Y/%m/%d %H:%M:%S'; do sleep 1; done
+    # status_command while date +'%a %Y/%m/%d %H:%M:%S'; do sleep 1; done
+    status_command i3status
 
     colors {
         statusline $yellow
