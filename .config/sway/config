@@ -18,12 +18,15 @@ set $term foot -L tmux-session.sh
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu "rofi -modi drun,run,emoji -show drun"
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/f1sty/media/images/wallpapers/lanterns.jpg fill
+output * {
+    bg /home/f1sty/media/images/wallpapers/lanterns.jpg fill
+}
 #
 # Example configuration:
 #
@@ -90,7 +93,7 @@ input * {
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exit
 #
 # Moving around:
 #
@@ -122,6 +125,7 @@ input * {
     bindsym $mod+n exec foot wiki.sh
     bindsym $mod+i exec firefox
     bindsym $mod+Shift+s exec slack
+    bindsym $mod+Shift+y sticky toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -249,8 +253,19 @@ set   $aqua       #689d68
 set   $gray       #a89984
 set   $darkgray   #1d2021
 
+# theme
+
+font "RobotoMono Nerd Font 8"
+client.focused $aqua $bg $yellow $aqua $aqua
+client.unfocused $darkgray $darkgray $gray $bg $bg
+titlebar_border_thickness 2
+# mouse_warping container|output
+mouse_warping container
+
 bar {
     position bottom
+    font "RobotoMono Nerd Font 8"
+
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -271,6 +286,7 @@ bar {
 }
 
 for_window [app_id="mpv"] floating enable
+for_window [app_id="foot"] opacity 0.85
 assign [class="firefox"] $ws2
 assign [class="Slack"] $ws5
 assign [app_id="org.pwmt.zathura"] $ws3
