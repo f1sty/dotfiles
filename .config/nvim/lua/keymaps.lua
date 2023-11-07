@@ -31,3 +31,17 @@ set('n', '<leader>mc', '<cmd>make clean<cr>')
 set('n', '<leader>mp', '<cmd>set makeprg=')
 set('n', '<leader>mf', '<cmd>set formatprg=')
 set('n', '<leader>n', '<cmd>let @+ = expand("%")<cr>')
+
+-- lsp mappings
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
+    set('n', '<leader>lf', vim.lsp.buf.format, { buffer = args.buf })
+    set('n', '<leader>lR', vim.lsp.buf.references, { buffer = args.buf })
+    set('n', '<leader>li', vim.lsp.buf.implementation, { buffer = args.buf })
+    set('n', '<leader>ld', vim.lsp.buf.definition, { buffer = args.buf })
+    set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = args.buf })
+    set('n', '<leader>lr', vim.lsp.buf.rename, { buffer = args.buf })
+    set('n', '<leader>ls', vim.lsp.buf.signature_help, { buffer = args.buf })
+  end,
+})
