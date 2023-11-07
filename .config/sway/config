@@ -103,11 +103,6 @@ input * {
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -125,10 +120,16 @@ input * {
     bindsym $mod+Shift+x border normal
     bindsym $mod+n exec foot wiki.sh
     bindsym $mod+i exec firefox
-# far fetched mnemonic to recall: looks like some type of aeriel
+    # far fetched mnemonic to recall: `q` looks like some type of aeriel
     bindsym $mod+q exec bemenu-radio.sh
-    bindsym $mod+Shift+s exec slack
+    bindsym $mod+Shift+s exec screenshot.sh
     bindsym $mod+Shift+y sticky toggle
+    bindsym $mod+m seat * cursor set 1 1
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left seat * cursor move -10 0
+    bindsym $mod+Right seat * cursor move 10 0
+    bindsym $mod+Down seat * cursor move 0 10
+    bindsym $mod+Up seat * cursor move 0 -10 
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
