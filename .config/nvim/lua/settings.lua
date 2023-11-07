@@ -58,11 +58,5 @@ o.encoding = 'utf-8'
 o.fileformat = 'unix'
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
--- make lsp signs nicer
--- highlight LspErrorText ctermbg=NONE guibg=NONE ctermfg=red guifg=red
--- highlight LspHintText ctermbg=NONE guibg=NONE ctermfg=lightblue guifg=lightblue
--- highlight LspWarningText ctermbg=NONE guibg=NONE ctermfg=yellow guifg=yellow
--- highlight LspInformationText ctermbg=NONE guibg=NONE ctermfg=green guifg=green
--- highlight LspInlayHintsType ctermbg=NONE guibg=NONE ctermfg=darkgreen guifg=darkgreen
--- highlight LspInlayHintsParameter ctermbg=NONE guibg=NONE ctermfg=lightblue guifg=lightblue
--- highlight lspReference ctermfg=blue guifg=blue ctermbg=NONE guibg=NONE
+-- works better for the transparrent bg
+vim.api.nvim_set_hl(0, "Normal", { fg = "#ababab", bg = "#0a0a0a" })

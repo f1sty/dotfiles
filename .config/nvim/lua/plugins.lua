@@ -48,42 +48,4 @@ local plugins = {
 }
 
 local opts = {}
-
 require("lazy").setup(plugins, opts)
---  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
---  use { 'romgrk/barbar.nvim', requires = 'nvim-web-devicons' }
---  use 'williamboman/mason.nvim'    
---  use 'williamboman/mason-lspconfig.nvim'
---  use 'neovim/nvim-lspconfig'
---  -- Completion framework:
---  use 'hrsh7th/nvim-cmp' 
---  -- LSP completion source:
---  use 'hrsh7th/cmp-nvim-lsp'
---  -- Useful completion sources:
---  use 'hrsh7th/cmp-nvim-lua'
---  use 'hrsh7th/cmp-nvim-lsp-signature-help'
---  use 'hrsh7th/cmp-path'                              
---  use 'hrsh7th/cmp-buffer'   
---  use 'nvim-treesitter/nvim-treesitter'
---  use { 'dcampos/cmp-snippy', requires = { 'dcampos/nvim-snippy', 'honza/vim-snippets' } }
---  -- Using Packer
---  use 'navarasu/onedark.nvim'
---  use {
---    'nvim-telescope/telescope.nvim', tag = '0.1.1',
---    requires = { {'nvim-lua/plenary.nvim'} }
---  }
---  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
---  use 'nvim-tree/nvim-tree.lua'
---  use({ "elixir-tools/elixir-tools.nvim", requires = { "nvim-lua/plenary.nvim" }})
---  use {
---    'vimwiki/vimwiki',
---    config = function()
---        vim.g.vimwiki_list = {
---            {
---                path = '/home/f1sty/media/docs/wiki',
---                syntax = 'markdown',
---                ext = '.md',
---            }
---        }
---    end
---    }
