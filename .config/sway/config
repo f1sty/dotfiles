@@ -121,6 +121,7 @@ input * {
     bindsym $mod+Shift+x border normal
     bindsym $mod+n exec foot wiki.sh
     bindsym $mod+i exec firefox
+    bindsym $mod+Shift+s exec slack
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -271,6 +272,7 @@ bar {
 
 for_window [app_id="mpv"] floating enable
 assign [class="firefox"] $ws2
+assign [class="Slack"] $ws5
 assign [app_id="org.pwmt.zathura"] $ws3
 assign [app_id="mpv"] $ws4
 
