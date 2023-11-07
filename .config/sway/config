@@ -276,4 +276,5 @@ assign [class="Slack"] $ws5
 assign [app_id="org.pwmt.zathura"] $ws3
 assign [app_id="mpv"] $ws4
 
+include ./autostart.conf
 include /etc/sway/config.d/*
