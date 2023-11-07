@@ -125,6 +125,8 @@ input * {
     bindsym $mod+Shift+x border normal
     bindsym $mod+n exec foot wiki.sh
     bindsym $mod+i exec firefox
+# far fetched mnemonic to recall: looks like some type of aeriel
+    bindsym $mod+q exec bemenu-radio.sh
     bindsym $mod+Shift+s exec slack
     bindsym $mod+Shift+y sticky toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
