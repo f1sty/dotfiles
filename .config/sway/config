@@ -19,7 +19,8 @@ set $term foot -L tmux-session.sh
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu "rofi -modi drun,run,emoji -show drun"
+# set $menu "rofi -modi drun,run,emoji -show drun"
+set $menu "bemenu-run"
 
 ### Output configuration
 #
