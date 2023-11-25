@@ -62,7 +62,10 @@ vpn3 ()
     ;;
   esac
 }
-
+ffyou ()
+{
+  yt-dlp "$1" -o - | ffplay - -autoexit -loglevel quiet
+}
 load_test ()
 {
   vegeta attack -rate "$1" -duration "$2" -targets "$3" | tee "$4" | vegeta report
