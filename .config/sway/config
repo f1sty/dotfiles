@@ -172,13 +172,13 @@ input * {
     set $ws10 ""
 
     workspace $ws1 output $monitor_center
-    workspace $ws2 output $monitor_left
-    workspace $ws3 output $monitor_left
+    workspace $ws2 output $monitor_center
+    workspace $ws3 output $monitor_center
     workspace $ws4 output $monitor_left
     workspace $ws5 output $monitor_left
     workspace $ws6 output $monitor_left
-    workspace $ws7 output $monitor_left
-    workspace $ws8 output $monitor_left
+    workspace $ws7 output $monitor_center
+    workspace $ws8 output $monitor_center
     # Switch to workspace
     bindsym $mod+1 workspace $ws1
     bindsym $mod+2 workspace $ws2
