@@ -1,5 +1,5 @@
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 export TERMINAL="st"
 export BROWSER="firefox"
 export DOTFILES="$HOME/downloads/.dotfiles"

@@ -3,7 +3,7 @@
     email = truef1s7@gmail.com
     signingkey = 9055CEB79D106FC68CC3BA155145F09CE60FDB47
 [core]
-    editor = nvim
+    editor = vim
 [commit]
     gpgsign = on
 [format]
@@ -11,9 +11,9 @@
 [init]
     defaultbranch = main
 [diff]
-    tool = nvim -d
+    tool = vimdiff
 [merge]
-    tool = nvim -d
+    tool = vimdiff
 [url "git@github.com:"]
 	insteadof = git://github.com/
 [pull]
