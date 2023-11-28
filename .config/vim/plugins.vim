@@ -1,26 +1,25 @@
 vim9script
 
 # setup plugin manager:
-# curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs \
-#    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 plug#begin('~/.config/vim/plugged')
   Plug 'vimwiki/vimwiki'
-  Plug 'rust-lang/rust.vim'
-  Plug 'elixir-editors/vim-elixir'
+#  Plug 'rust-lang/rust.vim'
+#  Plug 'elixir-editors/vim-elixir'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'godlygeek/tabular'
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+#  Plug 'SirVer/ultisnips'
+#  Plug 'honza/vim-snippets'
   Plug 'prabirshrestha/vim-lsp'
-  Plug 'mattn/vim-lsp-settings'
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  Plug 'prabirshrestha/asyncomplete-buffer.vim'
-  Plug 'prabirshrestha/asyncomplete-file.vim'
-  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+#  Plug 'mattn/vim-lsp-settings'
+#  Plug 'prabirshrestha/asyncomplete.vim'
+#  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+#  Plug 'prabirshrestha/asyncomplete-buffer.vim'
+#  Plug 'prabirshrestha/asyncomplete-file.vim'
+#  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 plug#end()

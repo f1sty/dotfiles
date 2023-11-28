@@ -2,9 +2,9 @@ vim9script
 
 # g:mapleader = ' '
 nnoremap <leader>s :set spell!<cr>
-nnoremap <leader>gg :Git<cr>
-nnoremap <leader>gp :Git push<cr>
-nnoremap <leader>gs :Git pull<cr>
+nnoremap <leader>g :Git<cr>
+# nnoremap <leader>gp :Git push<cr>
+# nnoremap <leader>gs :Git pull<cr>
 
 # lsp keymaps
 nnoremap <leader>la :LspCodeAction<cr>
@@ -26,17 +26,37 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 # fzf.vim mappings
-noremap <c-p> :Files<cr>
-noremap <leader>ff :GFiles<cr>
-noremap <leader>fb :Buffers<cr>
-noremap <leader>fg :Rg<cr>
-noremap <leader>fs :Snippets<cr>
+nnoremap <c-p> :Files<cr>
+nnoremap <leader>ff :GFiles<cr>
+nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>fg :Rg<cr>
+nnoremap <leader>fs :Snippets<cr>
+nnoremap <leader>fm :Marks<cr>
+nnoremap <leader>fj :Jumps<cr>
+nnoremap <leader>fh :Helptags<cr>
 
 # make/quickfix mappings
-nnoremap <leader>qq :copen<cr>
-nnoremap <leader>qc :cclose<cr>
+nnoremap <leader>ql :copen<cr>
+nnoremap <leader>qx :cclose<cr>
 nnoremap ]q :cnext<cr>
 nnoremap [q :cprevious<cr>
-nnoremap <leader>m :silent make<cr><c-l>
-nnoremap <leader>pm :set makeprg=
-nnoremap <leader>pf :set formatprg=
+nnoremap <leader>ms :silent make<cr><c-l>
+nnoremap <leader>mm :make<cr>
+nnoremap <leader>ma :make all<cr>
+nnoremap <leader>mc :make clean<cr>
+nnoremap <leader>mp :set makeprg=
+nnoremap <leader>mf :set formatprg=
+nnoremap <leader>ff :let @+=expand("%")<cr>
+
+# vim.api.nvim_create_autocmd('LspAttach', {
+#   callback = function(args)
+#     set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
+#     set('n', '<leader>lf', vim.lsp.buf.format, { buffer = args.buf })
+#     set('n', '<leader>lR', vim.lsp.buf.references, { buffer = args.buf })
+#     set('n', '<leader>li', vim.lsp.buf.implementation, { buffer = args.buf })
+#     set('n', '<leader>ld', vim.lsp.buf.definition, { buffer = args.buf })
+#     set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = args.buf })
+#     set('n', '<leader>lr', vim.lsp.buf.rename, { buffer = args.buf })
+#     set('n', '<leader>ls', vim.lsp.buf.signature_help, { buffer = args.buf })
+#   end,
+# })
