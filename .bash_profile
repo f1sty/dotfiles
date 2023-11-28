@@ -54,7 +54,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KERL_BUILD_DOCS=yes
-# export TERM=st-256color
+export TERM=st-256color
 export PATH=$HOME/.cache/rebar3/bin:$FLYCTL_INSTALL/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$HOME/.mix/escripts:$PATH
 # export LIBVA_DRIVER_NAME=nvidia
 # export VDPAU_DRIVER=nvidia
