@@ -11,6 +11,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_PLUG='p:preview-tui;o:fzopen;c:fzcd;u:getplugs:x:!chmod +x $nnn'
 
 export GOPATH="$HOME/coding/go"
+export GOBIN="$HOME/.local/bin"
 export FLYCTL_INSTALL="/home/f1sty/.fly"
 export CM_LAUNCHER=rofi
 export ERL_TOP="$HOME/src/otp"
