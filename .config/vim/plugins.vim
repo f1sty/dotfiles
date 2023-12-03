@@ -1,53 +1,34 @@
 vim9script
 
-# setup plugin manager:
-# curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if !filereadable(expand('~/.config/vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
 plug#begin('~/.config/vim/plugged')
   Plug 'vimwiki/vimwiki'
-#  Plug 'rust-lang/rust.vim'
-#  Plug 'elixir-editors/vim-elixir'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'godlygeek/tabular'
-#  Plug 'SirVer/ultisnips'
-#  Plug 'honza/vim-snippets'
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
   Plug 'prabirshrestha/vim-lsp'
-#  Plug 'mattn/vim-lsp-settings'
-#  Plug 'prabirshrestha/asyncomplete.vim'
-#  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
 #  Plug 'prabirshrestha/asyncomplete-buffer.vim'
 #  Plug 'prabirshrestha/asyncomplete-file.vim'
-#  Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 plug#end()
 
-# language servers / auto-completion settings
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-      \ 'name': 'buffer',
-      \ 'allowlist': ['*'],
-      \ 'blocklist': ['go'],
-      \ 'completor': function('asyncomplete#sources#buffer#completor'),
-      \ 'config': {
-      \    'max_buffer_size': 5000000,
-      \  },
-      \ }))
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
-      \ 'name': 'file',
-      \ 'allowlist': ['*'],
-      \ 'priority': 10,
-      \ 'completor': function('asyncomplete#sources#file#completor')
-      \ }))
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-      \ 'name': 'ultisnips',
-      \ 'allowlist': ['*'],
-      \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-      \ }))
+asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+  name: 'ultisnips',
+  allowlist: ['*'],
+  completor: function('asyncomplete#sources#ultisnips#completor')
+}))
 
-g:lsp_settings = {'elixir-ls': {'cmd': ['language_server.sh']}}
-g:lsp_use_native_client = 1
+# g:lsp_use_native_client = 1
 g:lsp_diagnostics_highlights_enabled = 0
 g:lsp_diagnostics_signs_error = {'text': '✗'}
 g:lsp_diagnostics_signs_warning = {'text': '‼'}
@@ -64,7 +45,7 @@ g:vimwiki_list = [{'path': '~/media/docs/wiki/', 'syntax': 'markdown', 'ext': '.
 
 # snippets settings
 g:snips_author = "Yurii <f1sty> Skrynnykov"
+g:UltiSnipsEditSplit = 'vertical'
 g:UltiSnipsExpandTrigger = '<c-s>'
-g:UltiSnipsListSnippets = '<c-l>'
 g:UltiSnipsJumpForwardTrigger = "<c-j>"
 g:UltiSnipsJumpBackwardTrigger = "<c-k>"

@@ -2,43 +2,49 @@ vim9script
 
 var c_config = {
 	name: 'clangd',
-	cmd: ['clangd'],
+	cmd: (server_info) => ['clangd'],
 	allowlist: ['c', 'cpp']
 }
 
 var erlang_config = {
 	name: 'erlang_ls',
-	cmd: ['erlang_ls'],
+	cmd: (server_info) => ['erlang_ls'],
 	allowlist: ['erlang']
 }
 
 var rust_config = {
-	name: 'rust-analyzer',
-	cmd: ['rust-analyzer'],
-	allowlist: ['rust']
+  name: 'rust-analyzer',
+  cmd: (server_info) => ['rust-analyzer'],
+  allowlist: ['rust'],
+  root_uri: (server_info) => lsp#utils#path_to_uri(
+    lsp#utils#find_nearest_parent_file_directory(
+      lsp#utils#get_buffer_path(),
+      ['Cargo.toml', '.git/']
+    )),
+  initialization_options: {},
 }
 
 var elixir_config = {
 	name: 'elixir-ls',
-	cmd: ['language_server.sh'],
+	cmd: (server_info) => ['language_server.sh'],
 	allowlist: ['elixir']
 }
 
 var go_config = {
 	name: 'gopls',
-	cmd: ['gopls'],
+	cmd: (server_info) => ['gopls'],
 	allowlist: ['go']
 }
 
 var js_config = {
 	name: 'js-lsp',
-	cmd: ['typescript-language-server', '--stdio'],
+	cmd: (server_info) => ['typescript-language-server', '--stdio'],
 	allowlist: ['javascript']
 }
 
 var swift_config = {
 	name: 'swift-lsp',
-	cmd: ['sourcekit-lsp'],
+	cmd: (server_info) => ['sourcekit-lsp'],
 	allowlist: ['swift']
 }
 
@@ -69,6 +75,9 @@ endif
 if executable('swift-lsp')
     au User lsp_setup lsp#register_server(swift_config)
 endif
+# g:lsp_log_verbose = 1
+# g:lsp_log_file = expand('~/vim-lsp.log')
+# g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 def OnLspBufferEnabled()
     setlocal omnifunc=lsp#complete
@@ -87,8 +96,8 @@ def OnLspBufferEnabled()
     # nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     # nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
-    " g:lsp_format_sync_timeout = 1000
-    " autocmd! BufWritePre *.rs,*.go,*.c execute('LspDocumentFormatSync')
+    g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.erl,*.rs,*.go,*.c execute('LspDocumentFormatSync')
 enddef
 
 augroup lsp_install

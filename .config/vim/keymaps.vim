@@ -48,15 +48,9 @@ nnoremap <leader>mp :set makeprg=
 nnoremap <leader>mf :set formatprg=
 nnoremap <leader>ff :let @+=expand("%")<cr>
 
-# vim.api.nvim_create_autocmd('LspAttach', {
-#   callback = function(args)
-#     set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
-#     set('n', '<leader>lf', vim.lsp.buf.format, { buffer = args.buf })
-#     set('n', '<leader>lR', vim.lsp.buf.references, { buffer = args.buf })
-#     set('n', '<leader>li', vim.lsp.buf.implementation, { buffer = args.buf })
-#     set('n', '<leader>ld', vim.lsp.buf.definition, { buffer = args.buf })
-#     set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = args.buf })
-#     set('n', '<leader>lr', vim.lsp.buf.rename, { buffer = args.buf })
-#     set('n', '<leader>ls', vim.lsp.buf.signature_help, { buffer = args.buf })
-#   end,
-# })
+# autocompletion
+imap <c-a> <Plug>(asyncomplete_force_refresh)
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
