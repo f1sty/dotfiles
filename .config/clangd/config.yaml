@@ -1,2 +1,2 @@
 CompileFlags:
-  Add: [-I/usr/avr/include, -Wall, -Wextra]
+  Add: [-I/usr/avr/include, -I., -Wall, -Wextra]
