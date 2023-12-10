@@ -35,6 +35,7 @@ alias lf='ls -F'
 alias ll='ls -l'
 alias lr='ls -R'
 alias ls='ls --color=auto'
+alias objdump="objdump @${HOME}/.config/objdump.args"
 alias pm='sudo pacman'
 alias slm="make && sudo make clean install"
 alias todo='${EDITOR} /home/f1sty/media/docs/personal/todo.md'
