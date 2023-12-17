@@ -57,8 +57,12 @@ vpn3 ()
       echo "openvpn3 session-stats --config $VPN_PROFILE"
       openvpn3 session-stats --config $VPN_PROFILE
     ;;
+    config)
+      echo "openvpn3 config-import --config ~/downloads/$VPN_PROFILE --name $VPN_PROFILE --persistent"
+      openvpn3 config-import --config $HOME/downloads/$VPN_PROFILE.ovpn --name $VPN_PROFILE --persistent
+    ;;
     *)
-      echo "commands: up, down, status"
+      echo "commands: up, down, status, config"
     ;;
   esac
 }
