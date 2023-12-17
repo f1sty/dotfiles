@@ -14,8 +14,8 @@ systemctl --user start clipmenud.service
 
 # setxkbmap -layout "us,ua,jp" -variant ",,kana" -option "grp:shifts_toggle,terminate:ctrl_alt_bksp,compose:menu"
 # keynav
-xset -dpms
-xset s off
+# xset -dpms
+# xset s off
 # key refresh rate
 xset r rate 300 35
 # mouse acceleration
