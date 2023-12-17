@@ -34,7 +34,7 @@
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
-Xft.dpi: 192
+! Xft.dpi: 192
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight

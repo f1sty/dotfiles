@@ -48,6 +48,12 @@ var swift_config = {
 	allowlist: ['swift']
 }
 
+var asm_config = {
+	name: 'asm-lsp',
+	cmd: (server_info) => ['asm-lsp'],
+	allowlist: ['asm']
+}
+
 if executable('erlang_ls')
     au User lsp_setup lsp#register_server(erlang_config)
 endif
@@ -74,6 +80,10 @@ endif
 
 if executable('swift-lsp')
     au User lsp_setup lsp#register_server(swift_config)
+endif
+
+if executable('asm-lsp')
+    au User lsp_setup lsp#register_server(asm_config)
 endif
 # g:lsp_log_verbose = 1
 # g:lsp_log_file = expand('~/vim-lsp.log')
