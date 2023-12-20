@@ -16,6 +16,7 @@ plug#begin('~/.config/vim/plugged')
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'elixir-editors/vim-elixir'
 #  Plug 'prabirshrestha/asyncomplete-buffer.vim'
 #  Plug 'prabirshrestha/asyncomplete-file.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

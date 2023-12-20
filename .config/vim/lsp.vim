@@ -1,5 +1,11 @@
 vim9script
 
+var lua_config = {
+        name: 'lua-language-server',
+        cmd: (server_info) => ['lua-language-server'],
+        allowlist: ['lua']
+}
+
 var c_config = {
 	name: 'clangd',
 	cmd: (server_info) => ['clangd'],
@@ -26,7 +32,7 @@ var rust_config = {
 
 var elixir_config = {
 	name: 'elixir-ls',
-	cmd: (server_info) => ['language_server.sh'],
+	cmd: (server_info) => ['elixir-ls'],
 	allowlist: ['elixir']
 }
 
@@ -54,6 +60,10 @@ var asm_config = {
 	allowlist: ['asm']
 }
 
+if executable('lua-language-server')
+    au User lsp_setup lsp#register_server(lua_config)
+endif
+
 if executable('erlang_ls')
     au User lsp_setup lsp#register_server(erlang_config)
 endif
@@ -66,7 +76,7 @@ if executable('rust-analyzer')
     au User lsp_setup lsp#register_server(rust_config)
 endif
 
-if executable('language_server.sh')
+if executable('elixir-ls')
     au User lsp_setup lsp#register_server(elixir_config)
 endif
 
