@@ -45,7 +45,7 @@ var go_config = {
 var js_config = {
 	name: 'js-lsp',
 	cmd: (server_info) => ['typescript-language-server', '--stdio'],
-	allowlist: ['javascript']
+	allowlist: ['javascript', 'typescript']
 }
 
 var swift_config = {
@@ -84,7 +84,7 @@ if executable('gopls')
     au User lsp_setup lsp#register_server(go_config)
 endif
 
-if executable('js-lsp')
+if executable('typescript-language-server')
     au User lsp_setup lsp#register_server(js_config)
 endif
 
