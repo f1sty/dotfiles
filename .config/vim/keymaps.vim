@@ -6,20 +6,9 @@ nnoremap <leader>g :Git<cr>
 # nnoremap <leader>gp :Git push<cr>
 # nnoremap <leader>gs :Git pull<cr>
 
-# lsp keymaps
-nnoremap <leader>la :LspCodeAction<cr>
-nnoremap <leader>ll :LspCodeLens<cr>
-nnoremap <leader>ld :LspDeclaration<cr>
-nnoremap <leader>ln :LspNextDiagnostic<cr>
-nnoremap <leader>lp :LspPreviousDiganostic<cr>
-nnoremap <leader>lr :LspReferences<cr>
-nnoremap <leader>lf :LspDocumentFormat<cr>
-nnoremap <leader>d :LspDefinition<cr>
-nnoremap <leader>h :LspHover<cr>
-
 # buffer navigation
-nnoremap <c-f> :bn<cr>
-nnoremap <c-b> :bp<cr>
+nnoremap <leader>] :bn<cr>
+nnoremap <leader>[ :bp<cr>
 
 # completion menu
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -36,8 +25,8 @@ nnoremap <leader>fj :Jumps<cr>
 nnoremap <leader>fh :Helptags<cr>
 
 # make/quickfix mappings
-nnoremap <leader>ql :copen<cr>
-nnoremap <leader>qx :cclose<cr>
+nnoremap <leader>qo :copen<cr>
+nnoremap <leader>qc :cclose<cr>
 nnoremap ]q :cnext<cr>
 nnoremap [q :cprevious<cr>
 nnoremap <leader>ms :silent make<cr><c-l>
@@ -46,7 +35,7 @@ nnoremap <leader>ma :make all<cr>
 nnoremap <leader>mc :make clean<cr>
 nnoremap <leader>mp :set makeprg=
 nnoremap <leader>mf :set formatprg=
-nnoremap <leader>ff :let @+=expand("%")<cr>
+nnoremap <leader>nn :let @+=expand("%")<cr>
 
 # autocompletion
 imap <c-a> <Plug>(asyncomplete_force_refresh)

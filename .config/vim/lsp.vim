@@ -105,6 +105,7 @@ def OnLspBufferEnabled()
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> ff <plug>(lsp-document-format)
     nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
     nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> gi <plug>(lsp-implementation)
@@ -113,11 +114,11 @@ def OnLspBufferEnabled()
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    # nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    # nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
     g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go,*.c execute('LspDocumentFormatSync')
+    autocmd! BufWritePre *.rs,*.go,*.c,*.js,*.ts execute('LspDocumentFormatSync')
 enddef
 
 augroup lsp_install
