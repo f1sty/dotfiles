@@ -24,7 +24,7 @@ xset m 3/2 6
 ~/.fehbg &
 deadpan &
 picom &
-xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput HEAD-1
+xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput HEAD-0
 exec dwm
 
 # japanese input stuff
