@@ -50,3 +50,6 @@ g:UltiSnipsEditSplit = 'vertical'
 g:UltiSnipsExpandTrigger = '<c-s>'
 g:UltiSnipsJumpForwardTrigger = "<c-j>"
 g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+
+# fzf.vim settings
+g:fzf_vim = {'preview_window': ['hidden,right,50%,<70(up,40%)', 'ctrl-/']}
