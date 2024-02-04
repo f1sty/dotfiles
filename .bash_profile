@@ -64,6 +64,7 @@ export BEMENU_OPTS="--list 40 --prompt '>' --binding vim --center --border 2 --w
 export WLR_NO_HARDWARE_CURSORS=1
 export LFS=/mnt/hdd/lfs
 export AWS_DEFAULT_PROFILE=$(pass show aws-profile)
+export NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini
 
 [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
 [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
