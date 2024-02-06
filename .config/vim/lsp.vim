@@ -118,7 +118,7 @@ def OnLspBufferEnabled()
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
     g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go,*.c,*.js,*.ts execute('LspDocumentFormatSync')
+    # autocmd! BufWritePre *.rs,*.go,*.c,*.js,*.ts execute('LspDocumentFormatSync')
 enddef
 
 augroup lsp_install
