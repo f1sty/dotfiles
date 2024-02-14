@@ -35,6 +35,8 @@
   pu = push
   pl = pull
   prev = switch -
+	sta = stash --all
+	bl = blame -w -C -C -C
 [interactive]
   diffFilter = delta --color-only
 [delta]
