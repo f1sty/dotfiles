@@ -60,6 +60,12 @@ var asm_config = {
 	allowlist: ['asm']
 }
 
+var python_config = {
+        name: 'pyright',
+        cmd: (server_info) => ['pyright-langserver', '--stdio'],
+        allowlist: ['python']
+}
+
 if executable('lua-language-server')
     au User lsp_setup lsp#register_server(lua_config)
 endif
@@ -94,6 +100,10 @@ endif
 
 if executable('asm-lsp')
     au User lsp_setup lsp#register_server(asm_config)
+endif
+
+if executable('pyright-langserver')
+    au User lsp_setup lsp#register_server(python_config)
 endif
 # g:lsp_log_verbose = 1
 # g:lsp_log_file = expand('~/vim-lsp.log')
