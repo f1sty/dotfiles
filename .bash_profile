@@ -28,6 +28,7 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}/rg/config"
 export HISTFILE="${XDG_DATA_HOME}/history"
 export WEECHAT_HOME="${XDG_CONFIG_HOME}/weechat"
 export FZF_TMUX=1
+export FZF_TMUX_OPTS="-p"
 export FZF_DEFAULT_COMMAND="fd --type f --follow --hidden --color=never"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
