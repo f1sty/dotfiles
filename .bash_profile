@@ -63,7 +63,7 @@ export PATH=$HOME/.cache/rebar3/bin:$FLYCTL_INSTALL/bin:$HOME/.cargo/bin:$HOME/.
 # export NVD_BACKEND=direct
 export BEMENU_OPTS="--list 40 --prompt '>' --binding vim --center --border 2 --width-factor 0.4 --fn 'RobotoMono Nerd Font 10'"
 export WLR_NO_HARDWARE_CURSORS=1
-export LFS=/mnt/hdd/lfs
+export LFS=/mnt
 export AWS_DEFAULT_PROFILE=$(pass show aws-profile)
 export NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini
 
