@@ -22,9 +22,9 @@ xset r rate 300 35
 xset m 3/2 6
 # set random background
 ~/.fehbg &
-deadpan &
-picom &
-xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput HEAD-0
+# deadpan &
+# picom &
+# xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput HEAD-0
 exec dwm
 
 # japanese input stuff

@@ -1,7 +1,7 @@
 vim9script
 
 if !filereadable(expand('~/.config/vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl --create-dirs -fLo ~/.config/vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 plug#begin('~/.config/vim/plugged')
