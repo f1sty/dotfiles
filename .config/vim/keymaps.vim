@@ -16,13 +16,13 @@ inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 # fzf.vim mappings
 nnoremap <c-p> :Files<cr>
-nnoremap <leader>ff :GFiles<cr>
-nnoremap <leader>fb :Buffers<cr>
-nnoremap <leader>fg :Rg<cr>
-nnoremap <leader>fs :Snippets<cr>
-nnoremap <leader>fm :Marks<cr>
-nnoremap <leader>fj :Jumps<cr>
-nnoremap <leader>fh :Helptags<cr>
+nnoremap <leader>wf :GFiles<cr>
+nnoremap <leader>wb :Buffers<cr>
+nnoremap <leader>wg :Rg<cr>
+nnoremap <leader>ws :Snippets<cr>
+nnoremap <leader>wm :Marks<cr>
+nnoremap <leader>wj :Jumps<cr>
+nnoremap <leader>wh :Helptags<cr>
 
 # make/quickfix mappings
 nnoremap <leader>qo :copen<cr>

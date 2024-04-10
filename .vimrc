@@ -6,12 +6,12 @@ set path+=/usr/avr/include
 
 source ~/.config/vim/plugins.vim
 
-# colorscheme slate
+colorscheme slate
 # colorscheme desert
 # colorscheme habamax
 # colorscheme pablo
 # colorscheme zaibatsu
-colorscheme retrobox
+# colorscheme retrobox
 set background=dark
 
 # usability settings
@@ -45,9 +45,9 @@ set expandtab
 set autoindent
 set smartindent
 set linebreak
-set breakat=98
-set textwidth=98
-set formatoptions+=tjn
+set breakat=120
+# set textwidth=98
+set formatoptions+=ojn
 set shiftwidth=2
 set softtabstop=2
 
