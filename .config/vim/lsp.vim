@@ -1,5 +1,11 @@
 vim9script
 
+var java_config = {
+        name: 'jdtls',
+        cmd: (server_info) => ['jdtls'],
+        allowlist: ['java']
+}
+
 var lua_config = {
         name: 'lua-language-server',
         cmd: (server_info) => ['lua-language-server'],
@@ -65,6 +71,10 @@ var python_config = {
         cmd: (server_info) => ['pyright-langserver', '--stdio'],
         allowlist: ['python']
 }
+
+if executable('jdtls')
+    au User lsp_setup lsp#register_server(java_config)
+endif
 
 if executable('lua-language-server')
     au User lsp_setup lsp#register_server(lua_config)

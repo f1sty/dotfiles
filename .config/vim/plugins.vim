@@ -29,7 +29,7 @@ asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
   completor: function('asyncomplete#sources#ultisnips#completor')
 }))
 
-# g:lsp_use_native_client = 1
+g:lsp_use_native_client = 1
 g:lsp_diagnostics_highlights_enabled = 0
 g:lsp_diagnostics_signs_error = {'text': '✗'}
 g:lsp_diagnostics_signs_warning = {'text': '‼'}

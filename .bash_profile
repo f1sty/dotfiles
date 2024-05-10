@@ -66,6 +66,7 @@ export WLR_NO_HARDWARE_CURSORS=1
 export LFS=/mnt
 export AWS_DEFAULT_PROFILE=$(pass show aws-profile)
 export NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini
+export ES_PASSWORD=$(pass work/es-local)
 
 [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"
 [[ -f "$XDG_CONFIG_HOME/bash/aliases" ]] && source "$XDG_CONFIG_HOME/bash/aliases"
