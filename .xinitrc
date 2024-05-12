@@ -23,7 +23,7 @@ xset m 3/2 6
 # set random background
 ~/.fehbg &
 deadpan &
-# picom &
+picom &
 # xsetwacom set 'Wacom One by Wacom M Pen stylus' MapToOutput HEAD-0
 # bar.sh &
 exec dwm
