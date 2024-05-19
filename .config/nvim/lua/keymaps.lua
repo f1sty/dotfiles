@@ -1,47 +1,34 @@
+-- telescope
+local builtin = require('telescope.builtin')
 local set = vim.keymap.set
-
-set('n', '<leader>s', '<cmd>set spell!<cr>')
-set('n', '<leader>g', '<cmd>Neogit cwd=%:p:h<cr>')
-
--- buffer navigation
-set('n', '<c-f>', '<cmd>bn<cr>')
-set('n', '<c-b>', '<cmd>bp<cr>')
-
--- telescope.nvim mappings
-local ts = require('telescope.builtin')
-set('n', '<c-p>', ts.find_files, {})
-set('n', '<leader>ff', ts.git_files, {})
-set('n', '<leader>fb', ts.buffers, {})
-set('n', '<leader>fg', ts.live_grep, {})
-set('n', '<leader>fs', ts.grep_string, {})
-set('n', '<leader>fc', ts.git_commits, {})
-set('n', '<leader>fj', ts.jumplist, {})
-set('n', '<leader>fh', ts.help_tags, {})
-set('n', '<leader>fm', ts.man_pages, {})
-set('n', '<leader>ft', ts.treesitter, {})
-
--- make/quickfix mappings
-set('n', '<leader>cc', '<cmd>cc<cr>')
-set('n', '<leader>cn', '<cmd>cn<cr>')
-set('n', '<leader>cp', '<cmd>cp<cr>')
-set('n', '<leader>mm', '<cmd>make<cr>')
-set('n', '<leader>ma', '<cmd>make all<cr>')
-set('n', '<leader>mi', '<cmd>make install<cr>')
-set('n', '<leader>mc', '<cmd>make clean<cr>')
-set('n', '<leader>mp', '<cmd>set makeprg=')
-set('n', '<leader>mf', '<cmd>set formatprg=')
-set('n', '<leader>n', '<cmd>let @+ = expand("%")<cr>')
-
--- lsp mappings
+set('n', '<leader>ff', builtin.find_files, {})
+set('n', '<leader>fg', builtin.live_grep, {})
+set('n', '<leader>fb', builtin.buffers, {})
+set('n', '<leader>fm', builtin.marks, {})
+set('n', '<leader>fq', builtin.quickfix, {})
+set('n', '<leader>fr', builtin.registers, {})
+set('n', '<leader>fj', builtin.jumplist, {})
+set('n', '<leader>fs', builtin.spell_suggest, {})
+set('n', '<leader>fh', builtin.help_tags, {})
+-- lsp
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
+    set('n', 'gd', builtin.lsp_definitions, { buffer = args.buf })
+    set('n', 'gr', builtin.lsp_references, { buffer = args.buf })
+    set('n', 'gI', builtin.lsp_implementations, { buffer = args.buf })
+    set('n', 'gD', builtin.diagnostics, { buffer = args.buf })
+    set('n', 'gi', builtin.lsp_incoming_calls, { buffer = args.buf })
+    set('n', 'go', builtin.lsp_outgoing_calls, { buffer = args.buf })
     set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
-    set('n', '<leader>lf', vim.lsp.buf.format, { buffer = args.buf })
-    set('n', '<leader>lR', vim.lsp.buf.references, { buffer = args.buf })
-    set('n', '<leader>li', vim.lsp.buf.implementation, { buffer = args.buf })
-    set('n', '<leader>ld', vim.lsp.buf.definition, { buffer = args.buf })
-    set('n', '<leader>la', vim.lsp.buf.code_action, { buffer = args.buf })
-    set('n', '<leader>lr', vim.lsp.buf.rename, { buffer = args.buf })
-    set('n', '<leader>ls', vim.lsp.buf.signature_help, { buffer = args.buf })
+    set('n', 'gff', vim.lsp.buf.format, { buffer = args.buf })
+    set('n', 'ga', vim.lsp.buf.code_action, { buffer = args.buf })
+    set('n', 'gR', vim.lsp.buf.rename, { buffer = args.buf })
+    set('n', 'gs', vim.lsp.buf.signature_help, { buffer = args.buf })
   end,
 })
+-- misc
+set('n', '<leader>s', '<cmd>set spell!<cr>', {})
+set('n', '<leader>gg', '<cmd>Neogit<cr>', {})
+-- buffer navigation
+set('n', ']b', '<cmd>bn<cr>', {})
+set('n', '[b', '<cmd>bp<cr>', {})

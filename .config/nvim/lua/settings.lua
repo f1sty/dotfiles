@@ -1,62 +1,54 @@
-local o = vim.o
+-- color theme
+-- vim.cmd.colorscheme('lunaperche')
+vim.cmd.colorscheme('retrobox')
 
-vim.cmd.colorscheme('habamax')
--- colorscheme koehler
--- colorscheme desert
--- colorscheme evening
--- colorscheme habamax
--- colorscheme pablo
--- colorscheme retrobox
--- colorscheme zaibatsu
-
+-- options
+vim.o.background = 'dark'
 -- usability settings
-o.compatible = false
-o.termguicolors = true
-o.showmatch = true
-o.incsearch = true
-o.ttyfast = true
-o.ignorecase = true
-o.smartcase = true
-o.number = true
-o.relativenumber = true
-o.cursorline = false
-o.title = true
-o.autoread = true
-o.hidden = true
-o.wildmenu = true
-o.wildoptions = 'pum'
-o.updatetime = 300
-o.complete = 'kspell'
-o.signcolumn = 'number'
-o.shortmess = 'c'
-o.scrolloff = 10
-o.spelllang = 'en_us'
--- o.completeopt = 'menu,menuone'
-o.laststatus = 2
-
+-- vim.o.nocompatible = true
+vim.o.termguicolors = true
+vim.o.showmatch = true
+vim.o.incsearch = true
+vim.o.ttyfast = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.cursorline = true
+vim.o.title = true
+vim.o.autoread = true
+vim.o.hidden = true
+vim.o.wildmenu = true
+-- vim.o.t_Co = 256
+vim.o.updatetime = 300
+vim.opt.complete:append('kspell')
+vim.opt.shortmess:append('c')
+vim.o.scrolloff = 10
+vim.o.spelllang = 'en_us'
+-- vim.opt.completeopt = { 'menu', 'popup' }
+vim.o.laststatus = 2
+vim.o.statusline = '%-F%-M %-y %-q%=%l:%v [0x%B] %p%%'
 -- formatting settings
-o.expandtab = true
-o.autoindent = true
-o.smartindent = true
-o.wrap = true
-o.linebreak = true
-o.textwidth = 98
-o.formatoptions = 'tjn'
-o.shiftwidth = 2
-o.softtabstop = 2
-
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.linebreak = true
+-- vim.o.breakat = 120
+vim.opt.formatoptions:append('ojn')
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
 -- turn off backup and swap, enable persistent undo
-o.backup = false
-o.writebackup = false
-o.swapfile = false
-o.undofile = true
-o.undolevels = 10000
-
+-- vim.o.nobackup = true
+-- vim.o.nowritebackup = true
+-- vim.o.noswapfile = true
+vim.o.undofile = true
+vim.o.undolevels = 10000
+vim.o.modifiable = true
 -- encoding settings
-o.encoding = 'utf-8'
--- o.fileencoding = 'utf-8'
-o.fileformat = 'unix'
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.o.encoding = 'utf-8'
+vim.o.fileencoding = 'utf-8'
+vim.o.fileformat = 'unix'
 
--- works better for the transparrent bg
-vim.api.nvim_set_hl(0, "Normal", { fg = "#ababab", bg = "#0a0a0a" })
+-- global variables
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0

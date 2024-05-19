@@ -1,8 +1,5 @@
-require('plugins.vimwiki')
+vim.g.vimwiki_list = { { path = '/home/f1sty/media/docs/wiki', syntax = 'markdown', ext = '.md', } }
+
 require('plugins')
-require('settings')
 require('keymaps')
-require('plugins.nvim-treesitter')
-require('plugins.nvim-cmp')
-require('plugins.nvim-snippy')
-require('plugins.telescope')
+require('settings')
