@@ -25,11 +25,6 @@ local plugins = {
   { 'vimwiki/vimwiki' },
   { 'godlygeek/tabular' },
   {
-    'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false,
-  },
-  {
     "NeogitOrg/neogit",
     branch = 'nightly',
     dependencies = {
