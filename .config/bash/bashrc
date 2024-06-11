@@ -33,9 +33,10 @@ PS1='\H:\w $(__git_ps1 "[%s]")❯ '
 complete -cf sudo
 complete -cf man
 
-[[ -x /usr/bin/lesspipe.sh ]] && eval "$(SHELL=/bin/sh lesspipe.sh)"
-[[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
-[[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -x "/usr/bin/lesspipe.sh" ]] && eval "$(SHELL=/bin/sh lesspipe.sh)"
+[[ -f "/usr/share/fzf/key-bindings.bash" ]] && source /usr/share/fzf/key-bindings.bash
+[[ -f "/usr/share/fzf/completion.bash" ]] && source /usr/share/fzf/completion.bash
 
 # asdf
 # git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3

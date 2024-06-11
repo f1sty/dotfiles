@@ -3,7 +3,7 @@
   email = truef1s7@gmail.com
   signingkey = 9055CEB79D106FC68CC3BA155145F09CE60FDB47
 [core]
-  editor = vim
+	editor = nvim
   pager = delta
 [commit]
   gpgsign = on

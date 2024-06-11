@@ -18,10 +18,6 @@ aur ()
 {
   git clone "https://aur.archlinux.org/$1"
 }
-pk ()
-{
-  cd ~/pkgs/$1
-}
 vpn ()
 {
   case $1 in
@@ -69,8 +65,4 @@ vpn3 ()
 ffyou ()
 {
   yt-dlp "$1" -o - | ffplay - -autoexit -loglevel quiet
-}
-load_test ()
-{
-  vegeta attack -rate "$1" -duration "$2" -targets "$3" | tee "$4" | vegeta report
 }
