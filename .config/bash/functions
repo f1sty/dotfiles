@@ -20,34 +20,23 @@ aur ()
 }
 vpn ()
 {
-  case $1 in
-    up)
-      echo "fortivpn connect $VPN_PROFILE"
-      fortivpn connect $VPN_PROFILE
-    ;;
-    down)
-      echo "fortivpn disconnect"
-      fortivpn disconnect
-    ;;
-    status)
-      echo "fortivpn status"
-      fortivpn status
-    ;;
-    *)
-      echo "commands: up, down, status"
-    ;;
-  esac
+    sudo openconnect --protocol=fortinet --user=$(pass forti/user) $(pass forti/host)
 }
 vpn3 ()
 {
   case $1 in
     up)
+      sudo -E su -c "echo nameserver $(pass syte/vpn-dns) > /etc/resolv.conf.head"
       echo "openvpn3 session-start --config $VPN_PROFILE"
       openvpn3 session-start --config $VPN_PROFILE
+      sleep 3
+      sudo resolvconf -u
     ;;
     down)
+      sudo su -c "cat /dev/null > /etc/resolv.conf.head"
       echo "openvpn3 session-manage --disconnect --config $VPN_PROFILE"
       openvpn3 session-manage --disconnect --config $VPN_PROFILE
+      sudo resolvconf -u
     ;;
     status)
       echo "openvpn3 session-stats --config $VPN_PROFILE"

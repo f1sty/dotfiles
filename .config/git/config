@@ -44,3 +44,8 @@
   light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [rebase]
 	updateRefs = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
