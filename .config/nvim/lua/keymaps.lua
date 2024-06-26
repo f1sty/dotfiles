@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 -- misc
 set('n', '<leader>s', '<cmd>set spell!<cr>', {})
-set('n', '<leader>gg', '<cmd>Neogit<cr>', {})
+set('n', '<leader>gg', '<cmd>Git<cr>', {})
 -- buffer navigation
 set('n', ']b', '<cmd>bn<cr>', {})
 set('n', '[b', '<cmd>bp<cr>', {})

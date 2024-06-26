@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  { 'nvim-telescope/telescope.nvim' },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   { 'hrsh7th/cmp-nvim-lsp' },
@@ -24,16 +25,7 @@ local plugins = {
   { 'honza/vim-snippets' },
   { 'vimwiki/vimwiki' },
   { 'godlygeek/tabular' },
-  {
-    "NeogitOrg/neogit",
-    branch = 'nightly',
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-      "nvim-telescope/telescope.nvim", -- optional
-    },
-    config = true
-  },
+  { 'tpope/vim-fugitive' },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
