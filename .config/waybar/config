@@ -1,6 +1,6 @@
 {
     "spacing": 0, // Gaps between modules (4px)
-    "position": "bottom",
+    "position": "top",
     "height": 20,
     "modules-left": ["dwl/tags"],
     "modules-center": [],
@@ -29,8 +29,8 @@
         "format": "  {avail}Gb"
     },
     "temperature": {
-        // "thermal-zone": 1,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "thermal-zone": 13,
+        // "hwmon-path": "/sys/class/hwmon/hwmon8/temp1_input",
         "critical-threshold": 90,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC}°C",
