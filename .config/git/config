@@ -3,7 +3,7 @@
   email = truef1s7@gmail.com
   signingkey = 9055CEB79D106FC68CC3BA155145F09CE60FDB47
 [core]
-	editor = nvim
+  editor = nvim
   pager = delta
 [commit]
   gpgsign = on
@@ -35,17 +35,17 @@
   pu = push
   pl = pull
   prev = switch -
-	sta = stash --all
-	bl = blame -w -C -C -C
+  sta = stash --all
+  bl = blame -w -C -C -C
 [interactive]
   diffFilter = delta --color-only
 [delta]
   navigate = true    # use n and N to move between diff sections
   light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [rebase]
-	updateRefs = true
+  updateRefs = true
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
