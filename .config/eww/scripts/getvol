@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if command -v wpctl &>/dev/null; then
+    status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+    if [[ $status =~ "MUTED" ]]; then
+	echo 0
+	exit
+    else
+	echo "100 * $(echo $status | cut -d' ' -f2)" | bc
+    fi
+else
+    echo 0
+fi
