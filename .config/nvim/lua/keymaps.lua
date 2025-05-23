@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     set('n', 'gi', builtin.lsp_incoming_calls, { buffer = args.buf })
     set('n', 'go', builtin.lsp_outgoing_calls, { buffer = args.buf })
     set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
-    set('n', 'gff', vim.lsp.buf.format, { buffer = args.buf })
+    set('n', 'gF', vim.lsp.buf.format, { buffer = args.buf })
     set('n', 'ga', vim.lsp.buf.code_action, { buffer = args.buf })
     set('n', 'gR', vim.lsp.buf.rename, { buffer = args.buf })
     set('n', 'gs', vim.lsp.buf.signature_help, { buffer = args.buf })
