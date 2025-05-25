@@ -32,7 +32,11 @@ symbol = " "
 symbol = " "
 
 [directory]
+format = "[ $path ]($style)"
 read_only = " 󰌾"
+# style = "fg:#DA627D"
+# truncation_length = 3
+# truncation_symbol = "…/"
 
 [docker_context]
 symbol = " "
@@ -282,19 +286,14 @@ $container\
 $netns\
 $shell\
 $character"""
-# [character]
-# success_symbol = '[](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+[character]
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 # [package]
 # disabled = true
-# [username]
-# show_always = true
+[username]
+show_always = true
 # # style_user = "fg:#9A348E"
 # style_user = "fg:#DA627D"
 # style_root = "fg:#9A348E"
-# format = '[$user]($style)'
-# disabled = false
-# [directory]
-# style = "fg:#DA627D"
-# format = "[ $path ]($style)"
-# truncation_length = 3
-# truncation_symbol = "…/"
+format = '[$user]($style)'
+disabled = false

@@ -45,3 +45,4 @@ alias ua='udevadm info --attribute-walk'
 alias webcam='mpv --no-cache --no-osc --profile=low-latency --untimed --title=webcam /dev/video0'
 alias wiki='${EDITOR} +VimwikiIndex'
 alias www="w3m https://lite.duckduckgo.com/lite"
+alias vim="nvim"
