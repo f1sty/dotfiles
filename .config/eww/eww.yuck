@@ -27,15 +27,15 @@
        :space-evenly true
        :halign "start"
        :spacing 10
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 1" 1)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 2" 2)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 3" 3)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 4" 4)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 5" 5)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 6" 6)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 7" 7)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 8" 8)
-    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 9" 9)))
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 1" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 2" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 3" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 4" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 5" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 6" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 7" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 8" "")
+    (button :onclick "hyprctl dispatch focusworkspaceoncurrentmonitor 9" "")))
 
 (defwidget music []
   (box :class "music"
