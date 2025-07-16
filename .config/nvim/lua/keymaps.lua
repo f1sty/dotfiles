@@ -1,15 +1,15 @@
 -- telescope
 local builtin = require('telescope.builtin')
 local set = vim.keymap.set
-set('n', '<leader>ff', builtin.find_files, {})
-set('n', '<leader>fg', builtin.live_grep, {})
-set('n', '<leader>fb', builtin.buffers, {})
-set('n', '<leader>fm', builtin.marks, {})
-set('n', '<leader>fq', builtin.quickfix, {})
-set('n', '<leader>fr', builtin.registers, {})
-set('n', '<leader>fj', builtin.jumplist, {})
-set('n', '<leader>fs', builtin.spell_suggest, {})
-set('n', '<leader>fh', builtin.help_tags, {})
+set('n', '<leader>f', builtin.find_files, {})
+set('n', '<leader>g', builtin.live_grep, {})
+set('n', '<leader>b', builtin.buffers, {})
+set('n', '<leader>m', builtin.marks, {})
+set('n', '<leader>q', builtin.quickfix, {})
+set('n', '<leader>r', builtin.registers, {})
+set('n', '<leader>j', builtin.jumplist, {})
+set('n', '<leader>s', builtin.spell_suggest, {})
+set('n', '<leader>h', builtin.help_tags, {})
 -- lsp
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
@@ -27,8 +27,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 -- misc
-set('n', '<leader>s', '<cmd>set spell!<cr>', {})
-set('n', '<leader>gg', '<cmd>Git<cr>', {})
+set('n', '<leader>ts', '<cmd>set spell!<cr>', {})
+set('n', '<leader>tg', '<cmd>Git<cr>', {})
 -- buffer navigation
 set('n', ']b', '<cmd>bn<cr>', {})
 set('n', '[b', '<cmd>bp<cr>', {})
