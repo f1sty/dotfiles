@@ -17,6 +17,8 @@ shopt -s cdspell
 shopt -s dirspell
 shopt -s globstar
 
+complete -cf doas
+
 source /usr/share/bash-completion/completions/fzf
 source /usr/share/fzf/key-bindings.bash
 
