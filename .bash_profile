@@ -33,7 +33,7 @@ export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2=1		# Mozilla smooth scrolling/touchpads.
 export MOZ_ENABLE_WAYLAND=1
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dawt.toolkit.name=WLToolkit'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$PATH

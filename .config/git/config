@@ -5,6 +5,7 @@
 [core]
   editor = nvim
   pager = delta
+  autocrlf = input
 [commit]
   gpgsign = on
 [format]
