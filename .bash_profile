@@ -36,7 +36,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dawt.toolkit.name=WLToolkit'
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ERL_AFLAGS="-kernel shell_history enabled"
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$PATH
+export PATH=$HOME/dev/flutter/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/scripts:$PATH
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 [[ -f "$XDG_CONFIG_HOME/bash/vars" ]] && source "$XDG_CONFIG_HOME/bash/vars"
 [[ -f "$XDG_CONFIG_HOME/bash/bashrc" ]] && source "$XDG_CONFIG_HOME/bash/bashrc"

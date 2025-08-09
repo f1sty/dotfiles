@@ -8,7 +8,7 @@ vim.g.mapleader = " "
 -- vim.o.nowritebackup = true
 -- vim.o.t_Co = 256
 -- vim.opt.completeopt = { 'menu', 'popup' }
--- vim.cmd.colorscheme('retrobox')
+vim.cmd.colorscheme('unokai')
 vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
@@ -50,6 +50,11 @@ vim.opt.wildmode = 'list:longest'
 vim.opt.complete:append('kspell')
 vim.opt.formatoptions:append('ojn')
 vim.opt.shortmess:append('c')
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+local marked = vim.api.nvim_get_hl(0, { name = 'PMenu' })
+vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true })
 
 -- hot keys
 set('n', 'j', 'gj', {})
@@ -81,19 +86,19 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 local plugins = {
-  {
-    "wincent/base16-nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme gruvbox-dark-hard]])
-      vim.o.background = 'dark'
-      local bools = vim.api.nvim_get_hl(0, { name = 'Boolean' })
-      vim.api.nvim_set_hl(0, 'Comment', bools)
-      local marked = vim.api.nvim_get_hl(0, { name = 'PMenu' })
-      vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true })
-    end
-  },
+  -- {
+  --   "wincent/base16-nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme gruvbox-dark-hard]])
+  --     vim.o.background = 'dark'
+  --     local bools = vim.api.nvim_get_hl(0, { name = 'Boolean' })
+  --     vim.api.nvim_set_hl(0, 'Comment', bools)
+  --     local marked = vim.api.nvim_get_hl(0, { name = 'PMenu' })
+  --     vim.api.nvim_set_hl(0, 'LspSignatureActiveParameter', { fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true })
+  --   end
+  -- },
   {
     'itchyny/lightline.vim',
     lazy = false, -- also load at start since it's UI
