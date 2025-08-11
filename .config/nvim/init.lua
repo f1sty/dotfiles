@@ -13,6 +13,7 @@ vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.vimwiki_list = { { path = '/home/f1sty/media/docs/vimwiki', syntax = 'markdown', ext = '.md', } }
+vim.opt.guicursor = 'n:ver25-blinkon500-blinkoff500,i:block'
 vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.background = 'dark'
