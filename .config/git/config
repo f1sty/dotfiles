@@ -33,17 +33,17 @@
 	defaultbranch = "main"
 
 [interactive]
-	diffFilter = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta --color-only"
+	diffFilter = "/usr/bin/delta --color-only"
 
 [merge]
 	conflictstyle = "diff3"
 	tool = "vimdiff"
 
 [pager]
-	blame = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
-	diff = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
-	log = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
-	show = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
+	blame = "/usr/bin/delta"
+	diff = "/usr/bin/delta"
+	log = "/usr/bin/delta"
+	show = "/usr/bin/delta"
 
 [pull]
 	rebase = true
