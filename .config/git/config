@@ -1,0 +1,60 @@
+[alias]
+	a = "add"
+	aa = "add --all"
+	bl = "blame -w -C -C -C"
+	ca = "commit --amend"
+	co = "checkout"
+	cv = "commit -v"
+	last = "log -1 HEAD"
+	last5 = "log -5 HEAD"
+	pl = "pull"
+	prev = "switch -"
+	pu = "push"
+	st = "status"
+	sta = "stash --all"
+	sw = "switch"
+	unstage = "restore --staged"
+
+[commit]
+	gpgSign = true
+
+[delta]
+	light = false
+	navigate = true
+
+[diff]
+	colormoved = "default"
+	tool = "vimdiff"
+
+[format]
+	pretty = "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s"
+
+[init]
+	defaultbranch = "main"
+
+[interactive]
+	diffFilter = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta --color-only"
+
+[merge]
+	conflictstyle = "diff3"
+	tool = "vimdiff"
+
+[pager]
+	blame = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
+	diff = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
+	log = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
+	show = "/nix/store/hbxz2p9qsjq7hjmj41p40saanlih22bd-delta-0.19.2/bin/delta"
+
+[pull]
+	rebase = true
+
+[rebase]
+	updaterefs = true
+
+[tag]
+	gpgSign = true
+
+[user]
+	email = "f1st@pm.me"
+	name = "Yurii Skrynnykov"
+	signingKey = "69A0D533343707A9B8EB9A095EE4C90A985D51B2"
