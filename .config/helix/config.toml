@@ -1,0 +1,8 @@
+theme = "autumn_night"
+
+[editor]
+line-number = "relative"
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
