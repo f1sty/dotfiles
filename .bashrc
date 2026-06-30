@@ -20,3 +20,4 @@ alias -- ip='ip -c'
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH="${HOME}/.local/bin:${PATH}"
