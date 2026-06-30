@@ -26,6 +26,7 @@ require("blink.cmp").setup({ fuzzy = { implementation = "prefer_rust" }, keymap 
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 vim.lsp.enable({ "lua_ls", "clangd", "zls", "elixirls", "nil_ls", "rust_analyzer", "ts_ls" })
+vim.lsp.config('elixirls', { cmd = { "/home/f1sty/.local/bin/language_server.sh" }; })
 vim.lsp.config("*", { capabilities = capabilities })
 
 vim.g.vimwiki_list = { { path = "/home/f1sty/media/docs/vimwiki", syntax = "markdown", ext = ".md", } }
