@@ -20,6 +20,11 @@ input {
     }
 }
 
+recent-windows {
+    binds {
+    }
+}
+
 cursor {
     xcursor-size 24
     xcursor-theme "gentoo-blue"
