@@ -1,4 +1,4 @@
-theme = "autumn"
+theme = "base16_terminal"
 
 [editor]
 line-number = "relative"
