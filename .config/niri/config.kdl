@@ -41,8 +41,9 @@ layout {
     }
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 4
-        active-color "#7fa8af"
+        // off
+        width 2
+        active-color "#fca103"
         inactive-color "#505050"
     }
 
@@ -87,6 +88,10 @@ animations {
 }
 
 window-rule {
+    open-maximized true
+}
+
+window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
 }
@@ -96,7 +101,7 @@ window-rule {
     open-floating true
 }
 
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
