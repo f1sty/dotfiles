@@ -13,9 +13,12 @@ vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
 })
 
-require("mini.pick").setup()
-require("oil").setup()
-require("nvim-surround").setup()
+-- list of plugins with basic setup
+local setup_list = { "mini.pick", "oil", "nvim-surround" }
+for _, v in ipairs(setup_list) do
+  require(v).setup()
+end
+
 require("base46").load_theme({ base = "base46", theme = "pastelbeans", transparency = false })
 require('nvim-treesitter').setup { install_dir = vim.fn.stdpath('data') .. '/site' }
 require('nvim-treesitter').install({ 'lua', 'zig', 'elixir', 'erlang', 'c', 'python', 'rust', 'go', 'vimdoc',
@@ -26,7 +29,7 @@ require("blink.cmp").setup({ fuzzy = { implementation = "prefer_rust" }, keymap 
 
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 vim.lsp.enable({ "lua_ls", "clangd", "zls", "elixirls", "nil_ls", "rust_analyzer", "ts_ls" })
-vim.lsp.config('elixirls', { cmd = { "/home/f1sty/.local/bin/language_server.sh" }; })
+vim.lsp.config("elixirls", { cmd = { "/home/f1sty/.local/bin/language_server.sh" }; })
 vim.lsp.config("*", { capabilities = capabilities })
 
 vim.g.vimwiki_list = { { path = "/home/f1sty/media/docs/vimwiki", syntax = "markdown", ext = ".md", } }
